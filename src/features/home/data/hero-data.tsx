@@ -13,55 +13,51 @@ import ShieldCheckIcon from "@hugeicons/core-free-icons/ShieldCheckIcon";
 import { ROUTES } from "@/shared/config/routes";
 import type { HeroCategory, HeroFeature } from "@/features/home/types/hero.types";
 
-export const mainCategories: HeroCategory[] = [
+export const allCategories: HeroCategory[] = [
   {
     id: "bodas",
-    title: "BODAS",
+    title: "Bodas",
+    subtitle: "Romance & elegancia",
     href: ROUTES.wedding,
+    isAvailable: true,
     theme: {
-      border: "border-[#38efea]",
-      shadow:
-        "shadow-[0_0_20px_rgba(56,239,234,0.4),inset_0_0_15px_rgba(56,239,234,0.15)] sm:shadow-[0_0_30px_rgba(56,239,234,0.45),inset_0_0_25px_rgba(56,239,234,0.18)]",
-      hoverShadow:
-        "group-hover:shadow-[0_0_45px_rgba(56,239,234,0.85),inset_0_0_35px_rgba(56,239,234,0.35)]",
-      glowBg: "bg-[#38efea]/20",
-      textColor: "text-[#38efea]",
-      particleColor: "#38efea",
+      accentColor: "#e5c583",
+      glowBg: "rgba(229, 197, 131, 0.12)",
+      iconColor: "text-amber-200",
+      borderHover: "hover:border-amber-300/50",
+      tagline: "El gran día",
     },
     iconNode: (
-      <div className="relative flex items-center justify-center">
-        <HugeiconsIcon
-          icon={WeddingIcon}
-          size={84}
-          strokeWidth={2}
-          className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 text-[#38efea] drop-shadow-[0_0_16px_rgba(56,239,234,0.95)]"
-        />
-      </div>
+      <HugeiconsIcon
+        icon={WeddingIcon}
+        size={44}
+        strokeWidth={1.75}
+        className="w-10 h-10 sm:w-11 sm:h-11 text-amber-200 transition-transform duration-300 group-hover:scale-105"
+      />
     ),
   },
   {
     id: "15-anos",
-    title: "15 AÑOS",
+    title: "15 Años",
+    subtitle: "Magia & brillo",
     href: ROUTES.fifteen,
+    isAvailable: true,
     theme: {
-      border: "border-[#ffc837]",
-      shadow:
-        "shadow-[0_0_20px_rgba(255,200,55,0.4),inset_0_0_15px_rgba(255,200,55,0.15)] sm:shadow-[0_0_30px_rgba(255,200,55,0.45),inset_0_0_25px_rgba(255,200,55,0.18)]",
-      hoverShadow:
-        "group-hover:shadow-[0_0_45px_rgba(255,200,55,0.85),inset_0_0_35px_rgba(255,200,55,0.35)]",
-      glowBg: "bg-[#ffc837]/20",
-      textColor: "text-[#ffc837]",
-      particleColor: "#ffc837",
+      accentColor: "#f4a8bd",
+      glowBg: "rgba(244, 168, 189, 0.12)",
+      iconColor: "text-rose-200",
+      borderHover: "hover:border-rose-300/50",
+      tagline: "Mis Quince",
     },
     iconNode: (
       <div className="flex flex-col items-center justify-center">
         <HugeiconsIcon
           icon={CrownIcon}
-          size={58}
-          strokeWidth={2}
-          className="w-12 h-12 xs:w-13 xs:h-13 sm:w-14 sm:h-14 text-[#ffc837] drop-shadow-[0_0_16px_rgba(255,200,55,0.95)]"
+          size={32}
+          strokeWidth={1.75}
+          className="w-8 h-8 sm:w-9 sm:h-9 text-rose-200 transition-transform duration-300 group-hover:scale-105"
         />
-        <span className="font-serif-luxury text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#ffc837] drop-shadow-[0_0_16px_rgba(255,200,55,0.95)] leading-none mt-0.5 sm:mt-1">
+        <span className="font-serif-luxury text-lg sm:text-xl font-semibold text-rose-200 leading-none mt-1">
           15
         </span>
       </div>
@@ -69,108 +65,93 @@ export const mainCategories: HeroCategory[] = [
   },
   {
     id: "cumpleanos",
-    title: "CUMPLEAÑOS",
+    title: "Cumpleaños",
+    subtitle: "Momentos únicos",
     href: ROUTES.birthday,
+    isAvailable: true,
     theme: {
-      border: "border-[#ff5e62]",
-      shadow:
-        "shadow-[0_0_20px_rgba(255,94,98,0.4),inset_0_0_15px_rgba(255,94,98,0.15)] sm:shadow-[0_0_30px_rgba(255,94,98,0.45),inset_0_0_25px_rgba(255,94,98,0.18)]",
-      hoverShadow:
-        "group-hover:shadow-[0_0_45px_rgba(255,94,98,0.85),inset_0_0_35px_rgba(255,94,98,0.35)]",
-      glowBg: "bg-[#ff5e62]/20",
-      textColor: "text-[#ff5e62]",
-      particleColor: "#ff5e62",
+      accentColor: "#f39c6b",
+      glowBg: "rgba(243, 156, 107, 0.12)",
+      iconColor: "text-amber-300",
+      borderHover: "hover:border-amber-400/50",
+      tagline: "Celebración",
     },
     iconNode: (
-      <div className="relative flex items-center justify-center">
-        <HugeiconsIcon
-          icon={BalloonsIcon}
-          size={84}
-          strokeWidth={2}
-          className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 text-[#ff5e62] drop-shadow-[0_0_16px_rgba(255,94,98,0.95)]"
-        />
-      </div>
+      <HugeiconsIcon
+        icon={BalloonsIcon}
+        size={44}
+        strokeWidth={1.75}
+        className="w-10 h-10 sm:w-11 sm:h-11 text-amber-300 transition-transform duration-300 group-hover:scale-105"
+      />
     ),
   },
   {
     id: "empresarial",
-    title: "EMPRESARIAL",
-    badge: "Próximamente",
+    title: "Empresarial",
+    subtitle: "Galas & eventos corporativos",
     href: "#",
+    badge: "Próximamente",
+    isAvailable: false,
     theme: {
-      border: "border-[#f857a6]",
-      shadow:
-        "shadow-[0_0_20px_rgba(248,87,166,0.4),inset_0_0_15px_rgba(248,87,166,0.15)] sm:shadow-[0_0_30px_rgba(248,87,166,0.45),inset_0_0_25px_rgba(248,87,166,0.18)]",
-      hoverShadow:
-        "group-hover:shadow-[0_0_45px_rgba(248,87,166,0.85),inset_0_0_35px_rgba(248,87,166,0.35)]",
-      glowBg: "bg-[#f857a6]/20",
-      textColor: "text-[#f857a6]",
-      particleColor: "#f857a6",
+      accentColor: "#a5b4fc",
+      glowBg: "rgba(165, 180, 252, 0.10)",
+      iconColor: "text-indigo-200",
+      borderHover: "hover:border-indigo-300/40",
+      tagline: "Corporativo",
     },
     iconNode: (
-      <div className="relative flex items-center justify-center">
-        <HugeiconsIcon
-          icon={Suit01Icon}
-          size={84}
-          strokeWidth={2}
-          className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 text-[#f857a6] drop-shadow-[0_0_16px_rgba(248,87,166,0.95)]"
-        />
-      </div>
+      <HugeiconsIcon
+        icon={Suit01Icon}
+        size={44}
+        strokeWidth={1.75}
+        className="w-10 h-10 sm:w-11 sm:h-11 text-indigo-200 transition-transform duration-300 group-hover:scale-105"
+      />
     ),
   },
-];
-
-export const comingSoonCategories: HeroCategory[] = [
   {
     id: "graduacion",
-    title: "GRADUACIÓN",
-    badge: "Próximamente",
+    title: "Graduación",
+    subtitle: "Logros & nuevas etapas",
     href: "#",
+    badge: "Próximamente",
+    isAvailable: false,
     theme: {
-      border: "border-[#10b981]",
-      shadow:
-        "shadow-[0_0_20px_rgba(16,185,129,0.4),inset_0_0_15px_rgba(16,185,129,0.15)] sm:shadow-[0_0_30px_rgba(16,185,129,0.45),inset_0_0_25px_rgba(16,185,129,0.18)]",
-      hoverShadow:
-        "group-hover:shadow-[0_0_45px_rgba(16,185,129,0.85),inset_0_0_35px_rgba(16,185,129,0.35)]",
-      glowBg: "bg-[#10b981]/20",
-      textColor: "text-[#10b981]",
-      particleColor: "#10b981",
+      accentColor: "#6ee7b7",
+      glowBg: "rgba(110, 231, 183, 0.10)",
+      iconColor: "text-emerald-200",
+      borderHover: "hover:border-emerald-300/40",
+      tagline: "Grados",
     },
     iconNode: (
-      <div className="relative flex items-center justify-center">
-        <HugeiconsIcon
-          icon={GraduationCapIcon}
-          size={84}
-          strokeWidth={2}
-          className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 text-[#10b981] drop-shadow-[0_0_16px_rgba(16,185,129,0.95)]"
-        />
-      </div>
+      <HugeiconsIcon
+        icon={GraduationCapIcon}
+        size={44}
+        strokeWidth={1.75}
+        className="w-10 h-10 sm:w-11 sm:h-11 text-emerald-200 transition-transform duration-300 group-hover:scale-105"
+      />
     ),
   },
   {
     id: "baby-shower",
-    title: "BABY\nSHOWER",
-    badge: "Próximamente",
+    title: "Baby Shower",
+    subtitle: "Bienvenida especial",
     href: "#",
+    badge: "Próximamente",
+    isAvailable: false,
     theme: {
-      border: "border-[#a855f7]",
-      shadow:
-        "shadow-[0_0_20px_rgba(168,85,247,0.4),inset_0_0_15px_rgba(168,85,247,0.15)] sm:shadow-[0_0_30px_rgba(168,85,247,0.45),inset_0_0_25px_rgba(168,85,247,0.18)]",
-      hoverShadow:
-        "group-hover:shadow-[0_0_45px_rgba(168,85,247,0.85),inset_0_0_35px_rgba(168,85,247,0.35)]",
-      glowBg: "bg-[#a855f7]/20",
-      textColor: "text-[#a855f7]",
-      particleColor: "#a855f7",
+      accentColor: "#c4b5fd",
+      glowBg: "rgba(196, 181, 253, 0.10)",
+      iconColor: "text-purple-200",
+      borderHover: "hover:border-purple-300/40",
+      tagline: "Bebés",
     },
     iconNode: (
-      <div className="relative flex items-center justify-center">
-        <HugeiconsIcon
-          icon={BabyBottleIcon}
-          size={84}
-          strokeWidth={2}
-          className="w-16 h-16 xs:w-18 xs:h-18 sm:w-20 sm:h-20 text-[#a855f7] drop-shadow-[0_0_16px_rgba(168,85,247,0.95)]"
-        />
-      </div>
+      <HugeiconsIcon
+        icon={BabyBottleIcon}
+        size={44}
+        strokeWidth={1.75}
+        className="w-10 h-10 sm:w-11 sm:h-11 text-purple-200 transition-transform duration-300 group-hover:scale-105"
+      />
     ),
   },
 ];
@@ -178,22 +159,22 @@ export const comingSoonCategories: HeroCategory[] = [
 export const footerFeatures: HeroFeature[] = [
   {
     icon: SmartPhone01Icon,
-    title: "100% DIGITAL",
-    subtitle: "FÁCIL DE COMPARTIR",
+    title: "100% Digital",
+    subtitle: "Acceso instantáneo y enlace web",
   },
   {
     icon: PaintBoardIcon,
-    title: "DISEÑOS MODERNOS",
-    subtitle: "Y PERSONALIZABLES",
+    title: "Diseño Editorial",
+    subtitle: "Personalización y estilo exclusivo",
   },
   {
     icon: MailValidation01Icon,
-    title: "CONFIRMACIÓN",
-    subtitle: "DE ASISTENCIA",
+    title: "Confirmación RSVP",
+    subtitle: "Gestión de invitados en vivo",
   },
   {
     icon: ShieldCheckIcon,
-    title: "SEGURO, RÁPIDO",
-    subtitle: "Y CON ESTILO",
+    title: "Música & Ubicación",
+    subtitle: "Mapas, agenda y detalles clave",
   },
 ];

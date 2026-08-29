@@ -3,27 +3,31 @@ import { footerFeatures } from "@/features/home/data/hero-data";
 
 export function HeroFeatures() {
   return (
-    <div className="relative z-10 w-full max-w-6xl mx-auto px-2 sm:px-4 mt-8 sm:mt-12">
-      <div className="rounded-xl sm:rounded-3xl border border-[#cba358]/55 bg-stone-950/85 backdrop-blur-lg px-3.5 py-3.5 xs:px-5 xs:py-4 sm:px-8 sm:py-6 shadow-[0_12px_40px_rgba(0,0,0,0.95)]">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-3.5 sm:gap-6 divide-y-0">
+    <div className="relative z-10 w-full max-w-6xl mx-auto px-2 xs:px-3 sm:px-6 mt-6 sm:mt-10">
+      <div className="rounded-2xl sm:rounded-3xl border border-white/15 bg-black/55 backdrop-blur-md p-3.5 xs:p-4 sm:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.5)]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
           {footerFeatures.map((feat, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 xs:gap-3 sm:gap-4 justify-start sm:justify-start lg:justify-center text-left"
+              className={`flex flex-col xs:flex-row items-center xs:items-center gap-2 xs:gap-3 sm:gap-4 text-center xs:text-left ${
+                idx > 0
+                  ? "md:border-l md:border-white/15 md:pl-4 lg:pl-6"
+                  : ""
+              }`}
             >
-              <div className="shrink-0 p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#cba358]/15 border border-[#cba358]/40 shadow-inner">
+              <div className="shrink-0 p-2 sm:p-2.5 rounded-xl bg-white/10 border border-white/20 shadow-inner text-amber-200 flex items-center justify-center">
                 <HugeiconsIcon
                   icon={feat.icon}
                   size={22}
-                  strokeWidth={2}
-                  className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-[#deb768]"
+                  strokeWidth={1.8}
+                  className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5"
                 />
               </div>
-              <div>
-                <p className="text-[10px] xs:text-[11px] sm:text-sm font-bold text-[#faf3e8] tracking-wider leading-tight">
+              <div className="min-w-0">
+                <p className="text-[11px] xs:text-xs sm:text-sm font-semibold text-white tracking-wide leading-tight truncate xs:whitespace-normal">
                   {feat.title}
                 </p>
-                <p className="text-[8px] xs:text-[9px] sm:text-xs text-[#deb768] font-medium tracking-wide leading-tight mt-0.5">
+                <p className="text-[9px] xs:text-[10px] sm:text-xs text-amber-100/75 font-light tracking-normal leading-tight mt-0.5 sm:mt-1">
                   {feat.subtitle}
                 </p>
               </div>

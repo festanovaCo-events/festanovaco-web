@@ -2,19 +2,20 @@ import type { ComponentProps, ReactNode } from "react";
 import type { HugeiconsIcon } from "@hugeicons/react";
 
 export interface HeroCategoryTheme {
-  border: string;
-  shadow: string;
-  hoverShadow: string;
+  accentColor: string;
   glowBg: string;
-  textColor: string;
-  particleColor: string;
+  iconColor: string;
+  borderHover: string;
+  tagline: string;
 }
 
 export interface HeroCategory {
   id: string;
   title: string;
   href: string;
+  subtitle: string;
   badge?: string;
+  isAvailable: boolean;
   theme: HeroCategoryTheme;
   iconNode: ReactNode;
 }
