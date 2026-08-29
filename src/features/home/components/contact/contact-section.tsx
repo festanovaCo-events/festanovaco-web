@@ -1,73 +1,71 @@
 export function ContactSection() {
   const whatsappUrl =
-    "https://wa.me/573000000000?text=Hola%20FestanovaCo,%20quiero%20informaci%C3%B3n%20sobre%20una%20invitaci%C3%B3n%20digital%20para%20mi%20evento";
+    "https://wa.me/573000000000?text=Hola%20FestanovaCo,%20quiero%20crear%20mi%20invitación%20digital%20exclusiva";
+  const emailAddress = "festanovaco.events@gmail.com";
 
   return (
     <section
       id="contacto"
-      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto text-stone-100"
+      className="relative z-10 w-full py-16 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-stone-900 dark:text-stone-100"
     >
-      <div className="rounded-3xl border border-amber-300/40 bg-gradient-to-b from-stone-800/80 via-stone-850/85 to-stone-900/90 backdrop-blur-2xl p-8 sm:p-12 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.4)] text-center relative overflow-hidden">
-        {/* Ambient Top Glow */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-amber-400/20 blur-3xl pointer-events-none" />
+      <div className="relative overflow-hidden rounded-[36px] sm:rounded-[48px] border border-[#E9DFD0] dark:border-white/20 bg-gradient-to-b from-white to-[#F7F3EC] dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_rgba(27,67,50,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+        {/* Ambient background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#C5A880]/15 dark:bg-amber-400/10 blur-3xl pointer-events-none" />
 
-        <span className="text-xs font-mono font-semibold uppercase tracking-[0.25em] text-amber-200 border border-amber-300/40 px-3.5 py-1 rounded-full bg-amber-950/40">
-          Atención Personalizada
-        </span>
+        <div className="relative z-10 max-w-2xl mx-auto">
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-300/60 dark:border-amber-300/30 bg-emerald-50/90 dark:bg-amber-950/40 backdrop-blur-md mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-600 dark:bg-amber-400 animate-pulse" />
+            <span className="text-[11px] font-medium uppercase tracking-widest text-emerald-950 dark:text-amber-200">
+              Atención personalizada
+            </span>
+          </div>
 
-        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white mt-4 max-w-2xl mx-auto">
-          Hagamos realidad la invitación de tu evento
-        </h2>
+          <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 dark:text-white">
+            ¿Listo para diseñar tu invitación soñada?
+          </h2>
 
-        <p className="text-sm sm:text-base text-stone-200 font-light max-w-xl mx-auto mt-4 leading-relaxed">
-          Cuéntanos sobre tu fecha, tipo de celebración y te asesoraremos paso a paso para crear un enlace inolvidable.
-        </p>
+          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light leading-relaxed mt-4 mb-8">
+            Escríbenos directamente a WhatsApp o envíanos un correo. Te asesoramos con la plantilla perfecta, cotización inmediata y personalización total.
+          </p>
 
-        {/* Contact Buttons */}
-        <div className="mt-8 sm:mt-10 flex flex-wrap justify-center items-center gap-4">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold uppercase tracking-wider text-stone-950 bg-gradient-to-r from-[#fae2ab] via-[#ebd097] to-[#d8b066] hover:from-[#fff0cd] hover:to-[#e5c583] rounded-full shadow-[0_6px_25px_rgba(216,176,102,0.4)] hover:shadow-[0_8px_30px_rgba(216,176,102,0.55)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-          >
-            <span>Escribir por WhatsApp</span>
-            <svg
-              className="w-4 h-4 sm:w-5 sm:h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-900 hover:bg-emerald-950 dark:bg-gradient-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-sm shadow-[0_8px_24px_rgba(27,67,50,0.25)] dark:shadow-[0_8px_24px_rgba(216,176,102,0.35)] hover:shadow-[0_12px_28px_rgba(27,67,50,0.35)] dark:hover:shadow-[0_12px_32px_rgba(216,176,102,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2.2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
+              <span>Escríbenos por WhatsApp</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
 
-          <a
-            href="mailto:festanovaco.events@gmail.com"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-medium uppercase tracking-wider text-stone-100 hover:text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/20 rounded-full backdrop-blur-md transition-all duration-200"
-          >
-            <span>festanovaco.events@gmail.com</span>
-          </a>
-        </div>
+            <a
+              href={`mailto:${emailAddress}`}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 text-stone-800 dark:text-white text-sm font-medium transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 shadow-sm"
+            >
+              <svg
+                className="w-4 h-4 text-emerald-800 dark:text-amber-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.75}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              <span>Escríbenos por Correo</span>
+            </a>
+          </div>
 
-        {/* Cities footprint */}
-        <div className="mt-10 sm:mt-12 pt-6 border-t border-white/10 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[11px] sm:text-xs text-stone-300 font-light">
-          <span>📍 Cartagena</span>
-          <span>•</span>
-          <span>Bogotá</span>
-          <span>•</span>
-          <span>Medellín</span>
-          <span>•</span>
-          <span>Santa Marta</span>
-          <span>•</span>
-          <span>Cali</span>
-          <span>•</span>
-          <span>Cobertura Nacional & Digital</span>
+          {/* City / Service Footprint */}
+          <p className="text-[11px] text-stone-500 dark:text-stone-400 font-light mt-8 tracking-wide">
+            Servicio para toda Colombia &bull; Entregas digitales 100% online
+          </p>
         </div>
       </div>
     </section>

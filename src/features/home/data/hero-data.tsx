@@ -23,7 +23,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#e5c583",
       glowBg: "rgba(229, 197, 131, 0.15)",
-      borderHover: "hover:border-amber-300/50",
+      borderHover: "hover:border-[#C5A880] dark:hover:border-amber-300/50",
       tagline: "El gran día",
     },
     iconNode: (
@@ -31,7 +31,7 @@ export const allCategories: HeroCategory[] = [
         icon={WeddingIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-amber-200 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-emerald-900 dark:text-amber-200 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },
@@ -44,7 +44,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#f4a8bd",
       glowBg: "rgba(244, 168, 189, 0.15)",
-      borderHover: "hover:border-rose-300/50",
+      borderHover: "hover:border-rose-300 dark:hover:border-rose-300/50",
       tagline: "Mis Quince",
     },
     iconNode: (
@@ -53,9 +53,9 @@ export const allCategories: HeroCategory[] = [
           icon={CrownIcon}
           size={32}
           strokeWidth={1.75}
-          className="w-8 h-8 sm:w-9 sm:h-9 text-rose-200 transition-transform duration-300 group-hover:scale-105"
+          className="w-8 h-8 sm:w-9 sm:h-9 text-rose-800 dark:text-rose-200 transition-transform duration-300 group-hover:scale-105"
         />
-        <span className="font-serif-luxury text-lg sm:text-xl font-semibold text-rose-200 leading-none mt-1">
+        <span className="font-serif-luxury text-lg sm:text-xl font-semibold text-rose-900 dark:text-rose-200 leading-none mt-1">
           15
         </span>
       </div>
@@ -70,7 +70,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#f39c6b",
       glowBg: "rgba(243, 156, 107, 0.15)",
-      borderHover: "hover:border-amber-400/50",
+      borderHover: "hover:border-amber-300 dark:hover:border-amber-400/50",
       tagline: "Celebración",
     },
     iconNode: (
@@ -78,7 +78,7 @@ export const allCategories: HeroCategory[] = [
         icon={BalloonsIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-amber-300 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-amber-800 dark:text-amber-300 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },
@@ -92,7 +92,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#a5b4fc",
       glowBg: "rgba(165, 180, 252, 0.12)",
-      borderHover: "hover:border-indigo-300/40",
+      borderHover: "hover:border-stone-300 dark:hover:border-indigo-300/40",
       tagline: "Corporativo",
     },
     iconNode: (
@@ -100,7 +100,7 @@ export const allCategories: HeroCategory[] = [
         icon={Suit01Icon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-indigo-200 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-stone-500 dark:text-indigo-200 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },
@@ -114,7 +114,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#6ee7b7",
       glowBg: "rgba(110, 231, 183, 0.12)",
-      borderHover: "hover:border-emerald-300/40",
+      borderHover: "hover:border-emerald-300 dark:hover:border-emerald-300/40",
       tagline: "Grados",
     },
     iconNode: (
@@ -122,7 +122,7 @@ export const allCategories: HeroCategory[] = [
         icon={GraduationCapIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-emerald-200 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-emerald-800/80 dark:text-emerald-200 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },
@@ -136,7 +136,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#c4b5fd",
       glowBg: "rgba(196, 181, 253, 0.12)",
-      borderHover: "hover:border-purple-300/40",
+      borderHover: "hover:border-purple-300 dark:hover:border-purple-300/40",
       tagline: "Bebés",
     },
     iconNode: (
@@ -144,7 +144,7 @@ export const allCategories: HeroCategory[] = [
         icon={BabyBottleIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-purple-200 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-purple-800/80 dark:text-purple-200 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },
