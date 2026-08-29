@@ -1,11 +1,5 @@
-import { CategoryLinks } from "./category-links";
-import { Hero } from "./hero";
+import { Hero } from "@/features/home/components/hero/hero";
 
 export function HomePage() {
-  return (
-    <>
-      <Hero />
-      <CategoryLinks />
-    </>
-  );
+  return <Hero />;
 }
