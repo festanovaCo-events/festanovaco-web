@@ -1,0 +1,37 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+
+import { SiteShell } from "@/shared/layout/site-shell";
+
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "FestanovaCo",
+    template: "%s | FestanovaCo",
+  },
+  description: "Invitaciones digitales para bodas, cumpleaños y celebraciones.",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="es"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full">
+        <SiteShell>{children}</SiteShell>
+      </body>
+    </html>
+  );
+}
