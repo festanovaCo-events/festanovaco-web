@@ -1,5 +1,21 @@
+import { SiteNavbar } from "@/shared/ui/site-navbar";
 import { Hero } from "@/features/home/components/hero/hero";
+import { HowItWorksSection } from "@/features/home/components/how-it-works/how-it-works-section";
+import { FaqSection } from "@/features/home/components/faq/faq-section";
+import { ContactSection } from "@/features/home/components/contact/contact-section";
+import { SiteFooter } from "@/shared/ui/site-footer";
 
 export function HomePage() {
-  return <Hero />;
+  return (
+    <div className="min-h-screen bg-[#1c1917] text-stone-100 flex flex-col selection:bg-amber-400/30 selection:text-white">
+      <SiteNavbar />
+      <main className="flex-1">
+        <Hero />
+        <HowItWorksSection />
+        <FaqSection />
+        <ContactSection />
+      </main>
+      <SiteFooter />
+    </div>
+  );
 }

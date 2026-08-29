@@ -21,7 +21,7 @@ export function Landing({ demoToken }: LandingProps) {
         mini-web Angular en este mismo dominio.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
-        <ButtonLink href="mailto:hola@festanovaco.com">Contactar asesor</ButtonLink>
+        <ButtonLink href="mailto:festanovaco.events@gmail.com">Contactar asesor</ButtonLink>
         <ButtonLink href={invitationHref} variant="secondary" fullPage>
           Ir a la invitación
         </ButtonLink>
