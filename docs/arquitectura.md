@@ -83,8 +83,9 @@ El DNS apunta solo al proyecto Next. `/invitations-wedding` y sus assets se prox
 
 | Pieza | Repo | Qué sirve | Dónde se publica |
 |-------|------|-----------|------------------|
-| Shell | `festanovaco-web` | `/`, `/wedding`, `/birthday` | Proyecto Vercel **con el dominio** |
+| Shell | `festanovaco-web` | `/`, `/wedding`, `/15-anos`, `/birthday` | Proyecto Vercel **con el dominio** |
 | Bodas | `wedding-invitation-tmp` | SPA de invitación | Otro proyecto Vercel (`WEDDING_APP_URL`) |
+| 15 Años | futuro | SPA de invitación | Otro proyecto; `FIFTEEN_APP_URL` |
 | Cumpleaños | futuro | SPA de invitación | Otro proyecto; `BIRTHDAY_APP_URL` |
 
 ### Rutas públicas
@@ -93,9 +94,11 @@ El DNS apunta solo al proyecto Next. `/invitations-wedding` y sus assets se prox
 |-----|----------------|
 | `festanovaco.com/` | Next — feature `home` |
 | `festanovaco.com/wedding` | Next — feature `wedding` |
+| `festanovaco.com/15-anos` | Next — feature `fifteen` (placeholder hasta el SPA Angular) |
 | `festanovaco.com/birthday` | Next — feature `birthday` (placeholder hasta el SPA Angular) |
 | `festanovaco.com/invitations-wedding?token=…` | Angular bodas (rewrite, **sin** página Next) |
 | `festanovaco.com/invitations-wedding/expired?token=…` | Angular bodas |
+| `festanovaco.com/invitations-15-anos?token=…` | Angular 15 años (cuando exista) |
 | `festanovaco.com/invitations-birthday?token=…` | Angular cumpleaños (cuando exista) |
 
 Next **no** define rutas `/invitations-wedding/*`. Si existiera una página React ahí, taparía el SPA.

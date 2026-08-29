@@ -4,8 +4,10 @@ import { createInvitationRewrites } from "./src/shared/config/rewrites";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    const weddingAppUrl = process.env.WEDDING_APP_URL ?? "http://localhost:4200";
+    const weddingAppUrl =
+      process.env.WEDDING_APP_URL ?? "http://localhost:4200";
     const birthdayAppUrl = process.env.BIRTHDAY_APP_URL?.trim();
+    const fifteenAppUrl = process.env.FIFTEEN_APP_URL?.trim();
 
     return [
       ...createInvitationRewrites({
@@ -16,6 +18,12 @@ const nextConfig: NextConfig = {
         ? createInvitationRewrites({
             sourcePrefix: "/invitations-birthday",
             destinationOrigin: birthdayAppUrl,
+          })
+        : []),
+      ...(fifteenAppUrl
+        ? createInvitationRewrites({
+            sourcePrefix: "/invitations-15-anos",
+            destinationOrigin: fifteenAppUrl,
           })
         : []),
     ];

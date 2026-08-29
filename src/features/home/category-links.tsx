@@ -9,6 +9,11 @@ const categories: { id: Category; title: string; description: string }[] = [
     description: "Invitaciones digitales para matrimonio, con confirmación y agenda.",
   },
   {
+    id: "fifteen",
+    title: "15 Años",
+    description: "Próximamente: invitaciones digitales para 15 años interactivas y personalizadas.",
+  },
+  {
     id: "birthday",
     title: "Cumpleaños",
     description: "Próximamente: mini-webs de cumpleaños en el mismo dominio.",
@@ -17,7 +22,7 @@ const categories: { id: Category; title: string; description: string }[] = [
 
 export function CategoryLinks() {
   return (
-    <section className="mx-auto grid max-w-5xl gap-4 px-6 pb-20 sm:grid-cols-2">
+    <section className="mx-auto grid max-w-5xl gap-4 px-6 pb-20 sm:grid-cols-2 lg:grid-cols-3">
       {categories.map((category) => (
         <Link
           key={category.id}

@@ -5,6 +5,7 @@ import { ROUTES } from "@/shared/config/routes";
 const navItems = [
   { href: ROUTES.home, label: "Inicio" },
   { href: ROUTES.wedding, label: "Bodas" },
+  { href: ROUTES.fifteen, label: "15 Años" },
   { href: ROUTES.birthday, label: "Cumpleaños" },
 ] as const;
 

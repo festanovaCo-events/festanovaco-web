@@ -2,11 +2,13 @@ export const ROUTES = {
   home: "/",
   wedding: "/wedding",
   birthday: "/birthday",
+  fifteen: "/15-anos",
   invitationsWedding: "/invitations-wedding",
   invitationsBirthday: "/invitations-birthday",
+  invitationsFifteen: "/invitations-15-anos",
 } as const;
 
-export type Category = "wedding" | "birthday";
+export type Category = "wedding" | "birthday" | "fifteen";
 
 export function categoryPath(category: Category): string {
   switch (category) {
@@ -14,6 +16,8 @@ export function categoryPath(category: Category): string {
       return ROUTES.wedding;
     case "birthday":
       return ROUTES.birthday;
+    case "fifteen":
+      return ROUTES.fifteen;
     default: {
       const _exhaustive: never = category;
       return _exhaustive;
