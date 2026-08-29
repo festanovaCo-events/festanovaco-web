@@ -4,7 +4,9 @@ import type { HugeiconsIcon } from "@hugeicons/react";
 export interface HeroCategoryTheme {
   accentColor: string;
   glowBg: string;
-  iconColor: string;
+  badgeBg: string;
+  badgeText: string;
+  gradientText: string;
   borderHover: string;
   tagline: string;
 }
