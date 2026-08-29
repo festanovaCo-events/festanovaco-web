@@ -95,6 +95,7 @@ export const mainCategories: HeroCategory[] = [
   {
     id: "empresarial",
     title: "EMPRESARIAL",
+    badge: "Próximamente",
     href: "#",
     theme: {
       border: "border-[#f857a6]",
