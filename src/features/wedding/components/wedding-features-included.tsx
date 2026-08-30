@@ -148,10 +148,10 @@ export function WeddingFeaturesIncluded() {
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-11 h-11 rounded-2xl flex items-center justify-center bg-[#FAF6F0] group-hover:bg-[#F5EFE4] dark:bg-stone-800/90 dark:group-hover:bg-stone-750 text-emerald-900 dark:text-amber-200 border border-[#E0D5C3] dark:border-white/10 transition-colors">
+                <div className="size-11 rounded-2xl flex items-center justify-center bg-[#FAF6F0] dark:bg-stone-800 text-emerald-900 dark:text-amber-200 border border-[#E0D5C3] dark:border-white/10 group-hover:border-emerald-700/40 dark:group-hover:border-amber-300/40 group-hover:bg-[#F3EBE0] dark:group-hover:bg-stone-700/60 transition-all duration-300">
                   {feat.icon}
                 </div>
-                <span className="text-[10px] font-medium uppercase tracking-wider text-stone-600 dark:text-amber-100/90 bg-[#FAF8F5] dark:bg-stone-800/90 border border-stone-200 dark:border-white/20 px-2.5 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-stone-600 dark:text-stone-300 bg-[#FAF8F5] dark:bg-stone-800/80 border border-stone-200 dark:border-white/10 px-2.5 py-0.5 rounded-full">
                   {feat.badge}
                 </span>
               </div>

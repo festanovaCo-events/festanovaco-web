@@ -34,7 +34,6 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
       id="catalogo"
       className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-stone-200/80 dark:border-white/10 scroll-mt-20"
     >
-      {/* Section Subhead with Scroll Reveal */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +52,6 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
         </p>
       </motion.div>
 
-      {/* Grid of Templates with Page Staggered Transition */}
       <AnimatePresence mode="wait">
         <motion.div
           key={safeCurrentPage}
@@ -73,7 +71,6 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
         </motion.div>
       </AnimatePresence>
 
-      {/* Pagination Bar */}
       {totalPages > 1 && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -89,7 +86,6 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
           </p>
 
           <div className="flex items-center gap-2">
-            {/* Previous Page Button */}
             <button
               type="button"
               disabled={safeCurrentPage === 1}
@@ -106,7 +102,6 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
               <span>Anterior</span>
             </button>
 
-            {/* Page Number Buttons */}
             <div className="flex items-center gap-1">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
@@ -124,7 +119,6 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
               ))}
             </div>
 
-            {/* Next Page Button */}
             <button
               type="button"
               disabled={safeCurrentPage === totalPages}

@@ -19,7 +19,6 @@ export function WeddingContactBanner() {
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         className="relative overflow-hidden rounded-5xl sm:rounded-7xl border border-[#E9DFD0] dark:border-white/20 bg-linear-to-b from-white to-[#F7F3EC] dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_rgba(27,67,50,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
       >
-        {/* Ambient background glow with gentle breathing animation */}
         <motion.div
           animate={{
             scale: [1, 1.18, 1],
@@ -34,7 +33,6 @@ export function WeddingContactBanner() {
         />
 
         <div className="relative z-10 max-w-2xl mx-auto">
-          {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-300/60 dark:border-amber-300/30 bg-emerald-50/90 dark:bg-amber-950/40 backdrop-blur-md mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-600 dark:bg-amber-400 animate-pulse" />
             <span className="text-[11px] font-medium uppercase tracking-widest text-emerald-950 dark:text-amber-200">
@@ -50,7 +48,6 @@ export function WeddingContactBanner() {
             Si tienes una paleta de color específica, monograma propio o quieres adaptar uno de los modelos que están en preparación, escríbenos y creamos la invitación perfecta para tu matrimonio.
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <motion.a
               whileHover={{ scale: 1.02 }}

@@ -5,6 +5,32 @@ export type WeddingTemplateCategory =
   | "botanical"
   | "destination";
 
+export interface ColorSwatch {
+  name: string;
+  hex: string;
+  role: string;
+}
+
+export interface MusicSuggestion {
+  title: string;
+  artist: string;
+  genre: string;
+  vibe: string;
+}
+
+export interface PhotoCapacity {
+  galleryMaxPhotos: number;
+  coverPhotos: number;
+  timelinePhotos: number;
+  description: string;
+}
+
+export interface IncludedModule {
+  title: string;
+  description: string;
+  tag: string;
+}
+
 export interface WeddingTemplate {
   id: string;
   number: string;
@@ -27,4 +53,10 @@ export interface WeddingTemplate {
   features: string[];
   demoHref?: string;
   whatsappMessage: string;
+  story: string;
+  colors: ColorSwatch[];
+  music: MusicSuggestion;
+  photoCapacity: PhotoCapacity;
+  includedModules: IncludedModule[];
+  customizationNotes: string[];
 }
