@@ -36,24 +36,6 @@ export function SiteFooter() {
           >
             Contacto
           </Link>
-          <Link
-            href={ROUTES.wedding}
-            className="hover:text-emerald-900 dark:hover:text-white transition-colors"
-          >
-            Bodas
-          </Link>
-          <Link
-            href={ROUTES.fifteen}
-            className="hover:text-emerald-900 dark:hover:text-white transition-colors"
-          >
-            15 Años
-          </Link>
-          <Link
-            href={ROUTES.birthday}
-            className="hover:text-emerald-900 dark:hover:text-white transition-colors"
-          >
-            Cumpleaños
-          </Link>
         </div>
       </div>
     </footer>
