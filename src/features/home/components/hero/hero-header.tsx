@@ -12,7 +12,7 @@ export function HeroHeader() {
       {/* Main Headline */}
       <h1 className="font-serif-luxury text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 dark:text-white leading-[1.12]">
         Celebra momentos únicos <br />
-        <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-stone-800 to-[#99733d] dark:from-amber-100 dark:via-amber-200 dark:to-[#e5c583]">
+        <span className="italic font-normal text-emerald-900 dark:text-amber-200">
           para tus Eventos
         </span>
       </h1>
@@ -24,9 +24,9 @@ export function HeroHeader() {
 
       {/* Refined Divider */}
       <div className="mt-6 sm:mt-8 flex items-center justify-center gap-3 opacity-70">
-        <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent to-[#C5A880] dark:to-amber-300/70" />
+        <div className="h-px w-12 sm:w-16 bg-linear-to-r from-transparent to-[#C5A880] dark:to-amber-300/70" />
         <div className="w-1.5 h-1.5 rotate-45 border border-[#C5A880] dark:border-amber-300 bg-[#FAF8F5] dark:bg-amber-200" />
-        <div className="h-px w-12 sm:w-16 bg-gradient-to-l from-transparent to-[#C5A880] dark:to-amber-300/70" />
+        <div className="h-px w-12 sm:w-16 bg-linear-to-l from-transparent to-[#C5A880] dark:to-amber-300/70" />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 
 interface FaqItem {
   question: string;
@@ -50,10 +51,16 @@ export function FaqSection() {
   return (
     <section
       id="preguntas-frecuentes"
-      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-stone-900 dark:text-stone-100"
+      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-stone-900 dark:text-stone-100 scroll-mt-20"
     >
-      {/* Section Header */}
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      {/* Section Header with Scroll Reveal */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
+      >
         <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-emerald-900 dark:text-amber-200 border border-[#D9CEBA] dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-white dark:bg-amber-950/40 shadow-sm dark:shadow-none">
           Dudas Comunes
         </span>
@@ -63,15 +70,23 @@ export function FaqSection() {
         <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light mt-3">
           Todo lo que necesitas saber sobre nuestras invitaciones digitales interactivas.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Accordion List */}
+      {/* Accordion List with Staggered Scroll Reveal */}
       <div className="space-y-3.5 sm:space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIdx === idx;
           return (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{
+                duration: 0.45,
+                delay: idx * 0.05,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${
                 isOpen
                   ? "border-[#C5A880] dark:border-amber-300/50 bg-white dark:bg-stone-900/90 shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
@@ -81,7 +96,7 @@ export function FaqSection() {
               <button
                 type="button"
                 onClick={() => toggle(idx)}
-                className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700/50 dark:focus-visible:ring-amber-300/50"
+                className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700/50 dark:focus-visible:ring-amber-300/50 cursor-pointer"
               >
                 <span className="text-sm sm:text-base font-medium text-stone-900 dark:text-white pr-4 font-serif-luxury">
                   {faq.question}
@@ -114,7 +129,7 @@ export function FaqSection() {
                   {faq.answer}
                 </div>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>

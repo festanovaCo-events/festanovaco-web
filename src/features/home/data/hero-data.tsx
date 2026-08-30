@@ -39,8 +39,9 @@ export const allCategories: HeroCategory[] = [
     id: "15-anos",
     title: "15 Años",
     subtitle: "Magia & brillo",
+    badge: "Próximamente",
+    isAvailable: false,
     href: ROUTES.fifteen,
-    isAvailable: true,
     theme: {
       accentColor: "#f4a8bd",
       glowBg: "rgba(244, 168, 189, 0.15)",
@@ -65,8 +66,9 @@ export const allCategories: HeroCategory[] = [
     id: "cumpleanos",
     title: "Cumpleaños",
     subtitle: "Momentos únicos",
+    badge: "Próximamente",
     href: ROUTES.birthday,
-    isAvailable: true,
+    isAvailable: false,
     theme: {
       accentColor: "#f39c6b",
       glowBg: "rgba(243, 156, 107, 0.15)",

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export function ContactSection() {
   const whatsappUrl =
     "https://wa.me/573000000000?text=Hola%20FestanovaCo,%20quiero%20crear%20mi%20invitación%20digital%20exclusiva";
@@ -6,11 +10,28 @@ export function ContactSection() {
   return (
     <section
       id="contacto"
-      className="relative z-10 w-full py-16 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-stone-900 dark:text-stone-100"
+      className="relative z-10 w-full py-16 sm:py-20 px-4 sm:px-6 max-w-5xl mx-auto text-stone-900 dark:text-stone-100 scroll-mt-20"
     >
-      <div className="relative overflow-hidden rounded-[36px] sm:rounded-[48px] border border-[#E9DFD0] dark:border-white/20 bg-gradient-to-b from-white to-[#F7F3EC] dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_rgba(27,67,50,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-        {/* Ambient background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#C5A880]/15 dark:bg-amber-400/10 blur-3xl pointer-events-none" />
+      <motion.div
+        initial={{ opacity: 0, y: 30, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        className="relative overflow-hidden rounded-5xl sm:rounded-7xl border border-[#E9DFD0] dark:border-white/20 bg-linear-to-b from-white to-[#F7F3EC] dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_rgba(27,67,50,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+      >
+        {/* Ambient background glow with gentle pulse */}
+        <motion.div
+          animate={{
+            scale: [1, 1.18, 1],
+            opacity: [0.15, 0.28, 0.15],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-80 sm:size-96 rounded-full bg-[#C5A880]/20 dark:bg-amber-400/15 blur-3xl pointer-events-none"
+        />
 
         <div className="relative z-10 max-w-2xl mx-auto">
           {/* Status Badge */}
@@ -31,19 +52,23 @@ export function ContactSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-900 hover:bg-emerald-950 dark:bg-gradient-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-sm shadow-[0_8px_24px_rgba(27,67,50,0.25)] dark:shadow-[0_8px_24px_rgba(216,176,102,0.35)] hover:shadow-[0_12px_28px_rgba(27,67,50,0.35)] dark:hover:shadow-[0_12px_32px_rgba(216,176,102,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-900 hover:bg-emerald-950 dark:bg-linear-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-sm shadow-[0_8px_24px_rgba(27,67,50,0.25)] dark:shadow-[0_8px_24px_rgba(216,176,102,0.35)] hover:shadow-[0_12px_28px_rgba(27,67,50,0.35)] dark:hover:shadow-[0_12px_32px_rgba(216,176,102,0.5)] transition-all duration-300"
             >
               <span>Escríbenos por WhatsApp</span>
               <span aria-hidden="true">&rarr;</span>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href={`mailto:${emailAddress}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 text-stone-800 dark:text-white text-sm font-medium transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 text-stone-800 dark:text-white text-sm font-medium transition-all duration-300 shadow-sm"
             >
               <svg
                 className="w-4 h-4 text-emerald-800 dark:text-amber-200"
@@ -59,7 +84,7 @@ export function ContactSection() {
                 />
               </svg>
               <span>Escríbenos por Correo</span>
-            </a>
+            </motion.a>
           </div>
 
           {/* City / Service Footprint */}
@@ -67,7 +92,7 @@ export function ContactSection() {
             Servicio para toda Colombia &bull; Entregas digitales 100% online
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

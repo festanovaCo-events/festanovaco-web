@@ -31,14 +31,10 @@ export const metadata: Metadata = {
 const themeScript = `
 (function() {
   try {
-    if (window.location.pathname === '/') {
-      var stored = localStorage.getItem('festanova_theme');
-      var isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+    var stored = localStorage.getItem('festanova_theme');
+    var isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }

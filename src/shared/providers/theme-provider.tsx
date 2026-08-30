@@ -7,7 +7,6 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { usePathname } from "next/navigation";
 
 type Theme = "light" | "dark";
 
@@ -21,33 +20,32 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 const STORAGE_KEY = "festanova_theme";
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
-  const pathname = usePathname();
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-      if (stored === "dark" || stored === "light") {
-        setThemeState(stored);
-      } else {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setThemeState(prefersDark ? "dark" : "light");
-      }
-    } catch {
-      setThemeState("light");
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") return "light";
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
+    if (stored === "dark" || stored === "light") {
+      return stored;
     }
-  }, []);
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  } catch {
+    return "light";
+  }
+}
+
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setThemeState] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     const root = document.documentElement;
-    // Solo aplicar clase .dark si nos encontramos en la página home ('/')
-    if (pathname === "/" && theme === "dark") {
+    if (theme === "dark") {
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");
     }
-  }, [pathname, theme]);
+  }, [theme]);
 
   const setTheme = (nextTheme: Theme) => {
     setThemeState(nextTheme);
