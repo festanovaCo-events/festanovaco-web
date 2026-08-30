@@ -407,14 +407,14 @@ export function WeddingTemplateDetail({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="p-8 sm:p-10 rounded-4xl bg-linear-to-b from-white to-[#FAF6F0] dark:from-stone-900/90 dark:to-stone-950/95 border border-[#E9DFD0] dark:border-white/15 shadow-sm mb-16 sm:mb-20"
+        className="p-6 sm:p-10 rounded-3xl sm:rounded-4xl bg-linear-to-b from-white to-[#FAF6F0] dark:from-stone-900/90 dark:to-stone-950/95 border border-[#E9DFD0] dark:border-white/15 shadow-sm mb-16 sm:mb-20"
       >
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="size-8 rounded-full bg-emerald-900 text-white dark:bg-amber-300 dark:text-stone-950 flex items-center justify-center text-sm font-bold">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
+            <span className="size-8 rounded-full bg-emerald-900 text-white dark:bg-amber-300 dark:text-stone-950 flex items-center justify-center text-sm font-bold shrink-0">
               ✓
             </span>
-            <h3 className="font-serif-luxury text-2xl sm:text-3xl font-normal text-stone-900 dark:text-white">
+            <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-normal text-stone-900 dark:text-white leading-snug">
               ¿Cómo personalizamos este modelo para tu matrimonio?
             </h3>
           </div>
@@ -422,13 +422,13 @@ export function WeddingTemplateDetail({
             Al ordenar tu invitación con FestanovaCo, nosotros nos encargamos de todo el montaje técnico y diseño. Tú solo nos envías tu información y nosotros preparamos tu enlace exclusivo.
           </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
             {template.customizationNotes.map((note, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-2.5 p-3 rounded-2xl bg-white/80 dark:bg-white/5 border border-stone-200/70 dark:border-white/10 text-xs text-stone-700 dark:text-stone-200"
+                className="flex items-start gap-2.5 p-3.5 sm:p-4 rounded-2xl bg-white/80 dark:bg-white/5 border border-stone-200/70 dark:border-white/10 text-xs sm:text-sm text-stone-700 dark:text-stone-200 leading-relaxed"
               >
-                <span className="text-emerald-700 dark:text-amber-300 font-bold shrink-0">&bull;</span>
+                <span className="text-emerald-700 dark:text-amber-300 font-bold shrink-0 mt-0.5">&bull;</span>
                 <span>{note}</span>
               </li>
             ))}
