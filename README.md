@@ -1,6 +1,11 @@
 # FestanovaCo (shell Next.js)
 
-Sitio principal de [festanovaco.com](https://festanovaco.com). Las invitaciones de boda viven en el repo Angular `wedding-invitation-tmp` y se sirven en el mismo dominio con rewrites.
+Sitio principal de [festanovaco.com](https://festanovaco.com). Las invitaciones de boda viven en los repos Angular (`wedding-model-01`, `wedding-model-02`, …) y se sirven en el mismo dominio con rewrites:
+
+- Modelo 01 → `/invitations-wedding-model-01`
+- Modelo 02 → `/invitations-wedding-model-02`
+
+Los subdominios `wedding-invitations-m01/m02.festanovaco.com` son el origen de cada SPA Angular (destino de los rewrites). La URL pública sigue siendo `festanovaco.com/invitations-wedding-model-0X`. En Vercel, `WEDDING_APP_URL` debe apuntar a esos subdominios (con `https://`). Los proyectos Angular no deben redirigir esos hosts de vuelta a `festanovaco.com`, o se crea un bucle.
 
 Documentación de objetivo, razones, arquitectura y alcance: [docs/arquitectura.md](./docs/arquitectura.md).
 
