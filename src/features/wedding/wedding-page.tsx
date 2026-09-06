@@ -1,4 +1,4 @@
-import { invitationsWeddingUrl } from "@/shared/config/routes";
+import { getWeddingDemoHrefs } from "@/shared/config/env";
 import { getWeddingTemplates } from "./data/wedding-templates-data";
 import { WeddingHero } from "./components/wedding-hero";
 import { WeddingFeaturesIncluded } from "./components/wedding-features-included";
@@ -10,8 +10,7 @@ type WeddingPageProps = {
 };
 
 export function WeddingPage({ demoToken }: WeddingPageProps) {
-  const invitationHref = invitationsWeddingUrl(demoToken);
-  const templates = getWeddingTemplates(invitationHref);
+  const templates = getWeddingTemplates(getWeddingDemoHrefs(demoToken));
 
   return (
     <div className="w-full flex flex-col min-h-screen">

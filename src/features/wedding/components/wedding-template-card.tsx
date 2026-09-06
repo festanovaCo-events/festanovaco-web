@@ -133,6 +133,8 @@ export function WeddingTemplateCard({
             {template.isAvailable && template.demoHref && (
               <a
                 href={template.demoHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden xs:inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white border border-white/70 hover:bg-white hover:text-stone-900 transition-all duration-300 shadow-sm active:scale-95"
               >
                 <span>Demo</span>

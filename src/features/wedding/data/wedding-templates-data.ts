@@ -1,6 +1,9 @@
 import type { WeddingTemplate } from "../types/wedding-templates.types";
 
-export function getWeddingTemplates(demoHref: string): WeddingTemplate[] {
+export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
+  const demoHref01 = demoHrefs[0];
+  const demoHref02 = demoHrefs[1];
+
   return [
     {
       id: "jorge-yina-signature",
@@ -13,8 +16,8 @@ export function getWeddingTemplates(demoHref: string): WeddingTemplate[] {
       category: "classic",
       description:
         "Nuestra invitación insignia en vivo con vista al atardecer, música instrumental, confirmación RSVP en tiempo real y mapa interactivo.",
-      isAvailable: true,
-      badge: "Demo en Vivo",
+      isAvailable: Boolean(demoHref01),
+      badge: demoHref01 ? "Demo en Vivo" : "Próximamente",
       previewImage: "/images/templates/wedding-demo-preview.jpg",
       theme: {
         accentGradient: "from-[#C5A880] via-[#A88B60] to-[#1B4332]",
@@ -28,7 +31,7 @@ export function getWeddingTemplates(demoHref: string): WeddingTemplate[] {
         "Waze & Google Maps",
         "Itinerario de boda",
       ],
-      demoHref,
+      demoHref: demoHref01,
       whatsappMessage:
         "Hola FestanovaCo, me encanta el modelo 'Cartagena Romance (Jorge & Yina)' y quisiera recibir asesoría y cotización para mi boda.",
       story:
@@ -102,8 +105,8 @@ export function getWeddingTemplates(demoHref: string): WeddingTemplate[] {
       category: "botanical",
       description:
         "Inspirado en la naturaleza con delicados acentos de follaje eucalipto, paleta olivo suave y ambientación rústica chic para eventos al aire libre.",
-      isAvailable: false,
-      badge: "Próximamente",
+      isAvailable: Boolean(demoHref02),
+      badge: demoHref02 ? "Demo en Vivo" : "Próximamente",
       theme: {
         accentGradient: "from-[#607D5E] via-[#4A6348] to-[#2D3E2C]",
         glowColor: "rgba(96, 125, 94, 0.35)",
@@ -116,6 +119,7 @@ export function getWeddingTemplates(demoHref: string): WeddingTemplate[] {
         "Guía de clima & outdoor",
         "Playlist Spotify",
       ],
+      demoHref: demoHref02,
       whatsappMessage:
         "Hola FestanovaCo, me gustaría apartar o solicitar información sobre el modelo 'Botanical Serenade' para mi boda.",
       story:
@@ -771,13 +775,13 @@ export function getWeddingTemplates(demoHref: string): WeddingTemplate[] {
 
 export function getWeddingTemplateById(
   id: string,
-  demoHref: string
+  demoHrefs: string[]
 ): WeddingTemplate | undefined {
-  const templates = getWeddingTemplates(demoHref);
+  const templates = getWeddingTemplates(demoHrefs);
   return templates.find((t) => t.id === id);
 }
 
 export function getAllWeddingTemplateIds(): string[] {
-  const templates = getWeddingTemplates("");
+  const templates = getWeddingTemplates([]);
   return templates.map((t) => t.id);
 }

@@ -6,8 +6,7 @@ import {
   getWeddingTemplateById,
   getAllWeddingTemplateIds,
 } from "@/features/wedding/data/wedding-templates-data";
-import { getWeddingDemoToken } from "@/shared/config/env";
-import { invitationsWeddingUrl } from "@/shared/config/routes";
+import { getWeddingDemoHrefs } from "@/shared/config/env";
 
 interface WeddingDetailPageProps {
   params: Promise<{ id: string }>;
@@ -22,8 +21,8 @@ export async function generateMetadata({
   params,
 }: WeddingDetailPageProps): Promise<Metadata> {
   const { id } = await params;
-  const demoHref = invitationsWeddingUrl(getWeddingDemoToken());
-  const template = getWeddingTemplateById(id, demoHref);
+  const demoHrefs = getWeddingDemoHrefs();
+  const template = getWeddingTemplateById(id, demoHrefs);
 
   if (!template) {
     return {
@@ -41,9 +40,9 @@ export default async function WeddingTemplateDetailPage({
   params,
 }: WeddingDetailPageProps) {
   const { id } = await params;
-  const demoHref = invitationsWeddingUrl(getWeddingDemoToken());
-  const allTemplates = getWeddingTemplates(demoHref);
-  const template = getWeddingTemplateById(id, demoHref);
+  const demoHrefs = getWeddingDemoHrefs();
+  const allTemplates = getWeddingTemplates(demoHrefs);
+  const template = getWeddingTemplateById(id, demoHrefs);
 
   if (!template) {
     notFound();

@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
+import { getWeddingAppUrl } from "./src/shared/config/env";
 import { createInvitationRewrites } from "./src/shared/config/rewrites";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    const weddingAppUrl =
-      process.env.WEDDING_APP_URL ?? "http://localhost:4200";
+    const weddingAppUrl = getWeddingAppUrl();
     const birthdayAppUrl = process.env.BIRTHDAY_APP_URL?.trim();
     const fifteenAppUrl = process.env.FIFTEEN_APP_URL?.trim();
 

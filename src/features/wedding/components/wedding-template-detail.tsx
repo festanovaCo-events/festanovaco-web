@@ -121,6 +121,8 @@ export function WeddingTemplateDetail({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 href={template.demoHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-white dark:bg-stone-800 text-stone-800 dark:text-white font-medium text-xs sm:text-sm shadow-xs transition-all"
               >
                 <span>Ver Invitación en Vivo (Demo)</span>
