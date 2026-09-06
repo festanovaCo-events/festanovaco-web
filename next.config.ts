@@ -1,19 +1,29 @@
 import type { NextConfig } from "next";
 
-import { getWeddingAppUrl } from "./src/shared/config/env";
+import { createWeddingInvitationRewrites } from "./src/shared/config/env";
 import { createInvitationRewrites } from "./src/shared/config/rewrites";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/invitations-wedding",
+        destination: "/invitations-wedding-model-01",
+        permanent: true,
+      },
+      {
+        source: "/invitations-wedding/:path*",
+        destination: "/invitations-wedding-model-01/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
-    const weddingAppUrl = getWeddingAppUrl();
     const birthdayAppUrl = process.env.BIRTHDAY_APP_URL?.trim();
     const fifteenAppUrl = process.env.FIFTEEN_APP_URL?.trim();
 
     return [
-      ...createInvitationRewrites({
-        sourcePrefix: "/invitations-wedding",
-        destinationOrigin: weddingAppUrl,
-      }),
+      ...createWeddingInvitationRewrites(),
       ...(birthdayAppUrl
         ? createInvitationRewrites({
             sourcePrefix: "/invitations-birthday",

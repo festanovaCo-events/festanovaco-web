@@ -10,7 +10,7 @@ Documentación de objetivo, razones, arquitectura y alcance: [docs/arquitectura.
 - `src/features/<feature>` — cada dominio es un feature (`home`, `wedding`, `birthday`). Lo nuevo entra aquí.
 - `src/shared` — layout, botones y config usados por más de un feature.
 
-No hay página Next en `/invitations-wedding`. Esa ruta se reescribe al SPA Angular.
+No hay página Next en `/invitations-wedding-model-01`, `-02`, etc. Esas rutas se reescriben a cada SPA Angular según el orden de `WEDDING_APP_URL`.
 
 ## Arranque local
 
@@ -23,13 +23,13 @@ npm run dev
 
 Abre [http://localhost:3000](http://localhost:3000), `/wedding` y `/birthday`.
 
-Para ver la invitación Angular detrás del rewrite, en `wedding-invitation-tmp`:
+Para ver la invitación Angular detrás del rewrite, en `wedding-model-01` (y opcionalmente `wedding-model-02` en otro puerto):
 
 ```bash
 ng serve
 ```
 
-Luego entra a `http://localhost:3000/invitations-wedding?token=...` (el CTA de `/wedding` usa `WEDDING_DEMO_TOKEN` si está en `.env.local`).
+Luego entra a `http://localhost:3000/invitations-wedding-model-01?token=...` (el CTA de `/wedding` usa `WEDDING_DEMO_TOKEN` si está en `.env.local`). Con varios orígenes en `WEDDING_APP_URL`, también existirá `/invitations-wedding-model-02`, `-03`, etc.
 
 El enlace a la invitación es un `<a>` de página completa, no `next/link`, para que el rewrite llegue al servidor.
 

@@ -350,7 +350,7 @@ Los estados de feedback (éxito, error, advertencia) deben mantener armonía con
 
 ## 5. Integración con Microfrontends (Next.js ⇄ Angular)
 
-De acuerdo con la arquitectura del proyecto (`docs/arquitectura.md`), FestanovaCo combina el shell **Next.js** con mini-aplicaciones de invitaciones en **Angular** (ej. `/invitations-wedding`):
+De acuerdo con la arquitectura del proyecto (`docs/arquitectura.md`), FestanovaCo combina el shell **Next.js** con mini-aplicaciones de invitaciones en **Angular** (ej. `/invitations-wedding-model-01`):
 
 1. **Clave de Persistencia Compartida:**
    Ambas aplicaciones deben leer y escribir bajo la misma clave de almacenamiento:
@@ -358,7 +358,7 @@ De acuerdo con la arquitectura del proyecto (`docs/arquitectura.md`), FestanovaC
    const STORAGE_KEY = "festanova_theme"; // valores posibles: 'light' | 'dark'
    ```
 2. **Sincronización:**
-   Al navegar desde Next.js a Angular mediante navegación completa (`<a href="/invitations-wedding?token=...">`), el SPA de Angular debe inspeccionar `localStorage.getItem('festanova_theme')` al inicializarse y aplicar la clase `.dark` a su `<html>` o `<body>` para evitar saltos o desajustes entre la landing y la invitación.
+   Al navegar desde Next.js a Angular mediante navegación completa (`<a href="/invitations-wedding-model-01?token=...">`), el SPA de Angular debe inspeccionar `localStorage.getItem('festanova_theme')` al inicializarse y aplicar la clase `.dark` a su `<html>` o `<body>` para evitar saltos o desajustes entre la landing y la invitación.
 
 ---
 

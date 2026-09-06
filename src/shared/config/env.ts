@@ -1,3 +1,6 @@
+import { invitationsWeddingUrl, weddingInvitationPath } from "./routes";
+import { createInvitationRewrites, type InvitationRewrite } from "./rewrites";
+
 function normalizeOrigin(raw: string): string {
   const trimmed = raw.trim().replace(/\/$/, "");
   if (!trimmed) {
@@ -20,26 +23,50 @@ export function getWeddingAppUrls(): string[] {
     .filter((origin) => origin.length > 0);
 }
 
-/** Primer origen: destino del rewrite `/invitations-wedding`. */
+/** Primer origen (modelo 01). */
 export function getWeddingAppUrl(): string {
   return getWeddingAppUrls()[0] ?? "http://localhost:4200";
 }
 
 /**
- * Hrefs de demo por modelo: el 1.er enlace → invitación 01, el 2.º → invitación 02, etc.
- * Si hay WEDDING_DEMO_TOKEN, se añade como query en cada URL.
+ * Pares ruta canónica ↔ origen de deploy.
+ * Orden en WEDDING_APP_URL: índice 0 → model-01, 1 → model-02, …
+ */
+export function getWeddingInvitationTargets(): Array<{
+  modelNumber: number;
+  path: string;
+  origin: string;
+}> {
+  return getWeddingAppUrls().map((origin, index) => {
+    const modelNumber = index + 1;
+    return {
+      modelNumber,
+      path: weddingInvitationPath(modelNumber),
+      origin,
+    };
+  });
+}
+
+/** Rewrites de Vercel/Next para todos los modelos listados en WEDDING_APP_URL. */
+export function createWeddingInvitationRewrites(): InvitationRewrite[] {
+  return getWeddingInvitationTargets().flatMap(({ path, origin }) =>
+    createInvitationRewrites({
+      sourcePrefix: path,
+      destinationOrigin: origin,
+    })
+  );
+}
+
+/**
+ * Hrefs de demo por modelo: siempre rutas del shell
+ * (`/invitations-wedding-model-01`, `-02`, …).
  */
 export function getWeddingDemoHrefs(token?: string): string[] {
   const resolvedToken = token ?? getWeddingDemoToken();
 
-  return getWeddingAppUrls().map((origin) => {
-    if (!resolvedToken) {
-      return origin;
-    }
-
-    const params = new URLSearchParams({ token: resolvedToken });
-    return `${origin}?${params.toString()}`;
-  });
+  return getWeddingInvitationTargets().map(({ modelNumber }) =>
+    invitationsWeddingUrl(resolvedToken, modelNumber)
+  );
 }
 
 export function getWeddingDemoToken(): string | undefined {

@@ -9,12 +9,22 @@ export const ROUTES = {
   weddingFeatures: "/wedding#caracteristicas",
   weddingCatalog: "/wedding#catalogo",
   weddingCustom: "/wedding#personalizable",
-  invitationsWedding: "/invitations-wedding",
+  /** Ruta canónica del modelo 01 (primer origen en WEDDING_APP_URL). */
+  invitationsWedding: "/invitations-wedding-model-01",
   invitationsBirthday: "/invitations-birthday",
   invitationsFifteen: "/invitations-15-anos",
 } as const;
 
 export type Category = "wedding" | "birthday" | "fifteen";
+
+/** Prefijo público de un modelo de boda: `/invitations-wedding-model-01`, `-02`, … */
+export function weddingInvitationPath(modelNumber: number): string {
+  if (!Number.isInteger(modelNumber) || modelNumber < 1) {
+    throw new Error(`Número de modelo de boda inválido: ${modelNumber}`);
+  }
+
+  return `/invitations-wedding-model-${String(modelNumber).padStart(2, "0")}`;
+}
 
 export function categoryPath(category: Category): string {
   switch (category) {
@@ -31,11 +41,21 @@ export function categoryPath(category: Category): string {
   }
 }
 
-export function invitationsWeddingUrl(token?: string): string {
+/**
+ * URL pública de una invitación de boda en el shell.
+ * @param token — opcional
+ * @param modelNumber — 1 → model-01, 2 → model-02 (por defecto 1)
+ */
+export function invitationsWeddingUrl(
+  token?: string,
+  modelNumber: number = 1
+): string {
+  const path = weddingInvitationPath(modelNumber);
+
   if (!token) {
-    return ROUTES.invitationsWedding;
+    return path;
   }
 
   const params = new URLSearchParams({ token });
-  return `${ROUTES.invitationsWedding}?${params.toString()}`;
+  return `${path}?${params.toString()}`;
 }
