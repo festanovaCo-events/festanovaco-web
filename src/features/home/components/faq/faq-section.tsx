@@ -51,7 +51,7 @@ export function FaqSection() {
   return (
     <section
       id="preguntas-frecuentes"
-      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-stone-900 dark:text-stone-100 scroll-mt-20"
+      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-foreground scroll-mt-20"
     >
       {/* Section Header with Scroll Reveal */}
       <motion.div
@@ -61,13 +61,13 @@ export function FaqSection() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
       >
-        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 border border-line-strong dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-surface dark:bg-amber-950/40 shadow-sm dark:shadow-none">
+        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand border border-badge-line px-3.5 py-1 rounded-full bg-badge shadow-[var(--shadow-badge)]">
           Dudas Comunes
         </span>
-        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 dark:text-white mt-4">
+        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-ink mt-4">
           Preguntas Frecuentes
         </h2>
-        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light mt-3">
+        <p className="text-sm sm:text-base text-muted font-light mt-3">
           Todo lo que necesitas saber sobre nuestras invitaciones digitales interactivas.
         </p>
       </motion.div>
@@ -89,23 +89,23 @@ export function FaqSection() {
               }}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${
                 isOpen
-                  ? "border-accent dark:border-amber-300/50 bg-surface dark:bg-stone-900/90 shadow-[0_8px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
-                  : "border-line hover:border-accent dark:border-white/20 dark:hover:border-amber-300/40 bg-surface hover:bg-surface-hover dark:bg-stone-900/60 dark:hover:bg-stone-800/75 shadow-[0_2px_8px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+                  ? "border-accent bg-surface shadow-[var(--shadow-card)]"
+                  : "border-line hover:border-accent bg-surface hover:bg-surface-hover shadow-[var(--shadow-soft)]"
               }`}
             >
               <button
                 type="button"
                 onClick={() => toggle(idx)}
-                className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 dark:focus-visible:ring-amber-300/50 cursor-pointer"
+                className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 cursor-pointer"
               >
-                <span className="text-sm sm:text-base font-medium text-stone-900 dark:text-white pr-4 font-serif-luxury">
+                <span className="text-sm sm:text-base font-medium text-ink pr-4 font-serif-luxury">
                   {faq.question}
                 </span>
                 <span
                   className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center border transition-transform duration-300 ${
                     isOpen
-                      ? "rotate-180 border-brand-mid dark:border-amber-300/60 bg-brand-muted dark:bg-amber-950/50 text-brand dark:text-amber-200"
-                      : "border-stone-200 dark:border-white/20 bg-stone-50 dark:bg-stone-800/80 text-stone-500 dark:text-amber-100"
+                      ? "rotate-180 border-brand-mid bg-brand-muted text-brand"
+                      : "border-line-soft bg-chip text-warm"
                   }`}
                 >
                   <svg
@@ -125,7 +125,7 @@ export function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-200 font-light leading-relaxed border-t border-stone-100 dark:border-white/10 pt-4 animate-in fade-in duration-200">
+                <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-muted font-light leading-relaxed border-t border-line-faint pt-4 animate-in fade-in duration-200">
                   {faq.answer}
                 </div>
               )}

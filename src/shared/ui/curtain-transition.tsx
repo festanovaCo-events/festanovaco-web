@@ -10,10 +10,9 @@ interface CurtainTransitionProps {
 export function CurtainTransition({ children }: CurtainTransitionProps) {
   return (
     <>
-      {/* Primary Deep Emerald Curtain */}
       <motion.div
         aria-hidden="true"
-        className="fixed inset-0 z-9999 flex items-center justify-center bg-brand-deep dark:bg-[#131211] pointer-events-none"
+        className="curtain fixed inset-0 z-9999 flex items-center justify-center pointer-events-none"
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
         transition={{
@@ -22,7 +21,6 @@ export function CurtainTransition({ children }: CurtainTransitionProps) {
           delay: 0.15,
         }}
       >
-        {/* Subtle Gold Brand Logo / Crest on Curtain */}
         <motion.div
           className="flex flex-col items-center justify-center gap-2"
           initial={{ opacity: 1, scale: 1, y: 0 }}
@@ -34,19 +32,17 @@ export function CurtainTransition({ children }: CurtainTransitionProps) {
           }}
         >
           <span className="font-serif-luxury text-2xl sm:text-3xl font-normal tracking-wider text-white">
-            Festanova<span className="text-on-brand font-semibold">Co</span>
+            Festanova<span className="text-gold font-semibold">Co</span>
           </span>
-          <div className="h-0.5 w-12 bg-on-brand" />
+          <div className="h-0.5 w-12 bg-gold" />
         </motion.div>
 
-        {/* Bottom Gold Trim Glow */}
-        <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-on-brand shadow-[0_0_15px_rgba(250,226,171,0.6)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-gold shadow-[0_0_15px_rgba(250,226,171,0.6)]" />
       </motion.div>
 
-      {/* Secondary Gold Accent Curtain Layer for depth */}
       <motion.div
         aria-hidden="true"
-        className="fixed inset-0 z-9998 bg-brand dark:bg-linear-to-b dark:from-[#24211e] dark:to-[#171513] pointer-events-none"
+        className="curtain-back fixed inset-0 z-9998 pointer-events-none"
         initial={{ y: "0%" }}
         animate={{ y: "-100%" }}
         transition={{
@@ -56,7 +52,6 @@ export function CurtainTransition({ children }: CurtainTransitionProps) {
         }}
       />
 
-      {/* Page Content Animation */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}

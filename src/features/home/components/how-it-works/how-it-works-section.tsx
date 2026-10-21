@@ -30,7 +30,7 @@ export function HowItWorksSection() {
   return (
     <section
       id="como-obtenerla"
-      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto text-stone-900 dark:text-stone-100 scroll-mt-20"
+      className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto text-foreground scroll-mt-20"
     >
       {/* Section Header with Scroll Reveal */}
       <motion.div
@@ -40,13 +40,13 @@ export function HowItWorksSection() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
       >
-        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 border border-line-strong dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-surface dark:bg-amber-950/40 shadow-sm dark:shadow-none">
+        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand border border-badge-line px-3.5 py-1 rounded-full bg-badge shadow-[var(--shadow-badge)]">
           Proceso Simple
         </span>
-        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 dark:text-white mt-4">
+        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-ink mt-4">
           ¿Cómo obtener tu invitación?
         </h2>
-        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light mt-3">
+        <p className="text-sm sm:text-base text-muted font-light mt-3">
           En solo 3 pasos tendrás una experiencia web interactiva, moderna y elegante para compartir con tus invitados.
         </p>
       </motion.div>
@@ -65,30 +65,30 @@ export function HowItWorksSection() {
               ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-line hover:border-accent dark:border-white/20 dark:hover:border-amber-300/50 bg-surface hover:bg-surface-hover dark:bg-stone-900/60 dark:hover:bg-stone-800/75 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:shadow-[0_16px_40px_var(--shadow-brand)] dark:hover:shadow-[0_20px_45px_rgba(216,176,102,0.25)] transition-all duration-300"
+            className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-3xl border border-line hover:border-accent bg-surface hover:bg-surface-hover backdrop-blur-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300"
           >
             {/* Top Bar with Number & Tag */}
             <div className="flex items-center justify-between mb-6">
-              <span className="font-serif-luxury text-3xl sm:text-4xl font-normal text-brand/80 group-hover:text-brand-deep dark:text-amber-200 dark:group-hover:text-amber-100 transition-colors">
+              <span className="font-serif-luxury text-3xl sm:text-4xl font-normal text-brand/80 group-hover:text-brand-deep transition-colors">
                 {step.number}
               </span>
-              <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-stone-600 dark:text-amber-100 bg-background dark:bg-stone-800/90 border border-stone-200 dark:border-white/20 px-2.5 py-0.5 rounded-full">
+              <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-warm bg-inset border border-line-strong px-2.5 py-0.5 rounded-full">
                 {step.tag}
               </span>
             </div>
 
             {/* Content */}
             <div>
-              <h3 className="text-lg sm:text-xl font-serif-luxury font-medium text-stone-900 group-hover:text-brand dark:text-white dark:group-hover:text-amber-100 transition-colors">
+              <h3 className="text-lg sm:text-xl font-serif-luxury font-medium text-ink group-hover:text-brand transition-colors">
                 {step.title}
               </h3>
-              <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed font-light mt-2.5">
+              <p className="text-xs sm:text-sm text-muted leading-relaxed font-light mt-2.5">
                 {step.description}
               </p>
             </div>
 
             {/* Bottom accent line */}
-            <div className="mt-6 pt-4 border-t border-stone-100 dark:border-white/10 flex items-center justify-between text-[11px] text-brand-mid group-hover:text-brand-deep dark:text-amber-200/90 dark:group-hover:text-amber-100 font-medium">
+            <div className="mt-6 pt-4 border-t border-line-faint flex items-center justify-between text-[11px] text-brand-mid group-hover:text-brand-deep font-medium">
               <span>FestanovaCo</span>
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </div>

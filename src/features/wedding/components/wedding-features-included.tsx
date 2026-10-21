@@ -111,7 +111,7 @@ export function WeddingFeaturesIncluded() {
   return (
     <section
       id="caracteristicas"
-      className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-stone-200/80 dark:border-white/10 scroll-mt-20"
+      className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-line scroll-mt-20"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -120,13 +120,13 @@ export function WeddingFeaturesIncluded() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
       >
-        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 border border-line-strong dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-surface dark:bg-amber-950/40 shadow-xs">
+        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand border border-badge-line px-3.5 py-1 rounded-full bg-badge shadow-[var(--shadow-badge)]">
           Experiencia Completa
         </span>
-        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 dark:text-white mt-4">
+        <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-ink mt-4">
           ¿Qué incluye tu invitación digital?
         </h2>
-        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light mt-3">
+        <p className="text-sm sm:text-base text-muted font-light mt-3">
           Todo lo necesario para que tus invitados vivan la emoción de su matrimonio desde el primer momento en que abren su invitación.
         </p>
       </motion.div>
@@ -144,22 +144,22 @@ export function WeddingFeaturesIncluded() {
               ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="group p-6 sm:p-7 rounded-3xl border border-line hover:border-accent dark:border-white/15 dark:hover:border-amber-300/40 bg-surface hover:bg-surface-hover dark:bg-stone-900/60 dark:hover:bg-stone-800/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_var(--shadow-brand)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_16px_36px_rgba(216,176,102,0.15)] flex flex-col justify-between transition-all duration-300"
+            className="group p-6 sm:p-7 rounded-3xl border border-line hover:border-accent bg-surface hover:bg-surface-hover backdrop-blur-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] flex flex-col justify-between transition-all duration-300"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="size-11 rounded-2xl flex items-center justify-center bg-surface-muted dark:bg-stone-800 text-brand dark:text-amber-200 border border-line-strong dark:border-white/10 group-hover:border-brand/40 dark:group-hover:border-amber-300/40 group-hover:bg-glow dark:group-hover:bg-stone-700/60 transition-all duration-300">
+                <div className="size-11 rounded-2xl flex items-center justify-center bg-surface-muted text-brand border border-line-strong group-hover:border-brand/40 group-hover:bg-glow transition-all duration-300">
                   {feat.icon}
                 </div>
-                <span className="text-[10px] font-medium uppercase tracking-wider text-stone-600 dark:text-stone-300 bg-background dark:bg-stone-800/80 border border-stone-200 dark:border-white/10 px-2.5 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-muted bg-inset border border-line-soft px-2.5 py-0.5 rounded-full">
                   {feat.badge}
                 </span>
               </div>
 
-              <h3 className="font-serif-luxury text-lg sm:text-xl font-medium text-stone-900 group-hover:text-brand-deep dark:text-white dark:group-hover:text-amber-100 mb-2 transition-colors">
+              <h3 className="font-serif-luxury text-lg sm:text-xl font-medium text-ink group-hover:text-brand-deep mb-2 transition-colors">
                 {feat.title}
               </h3>
-              <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-muted font-light leading-relaxed">
                 {feat.description}
               </p>
             </div>

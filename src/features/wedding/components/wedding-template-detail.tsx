@@ -26,31 +26,31 @@ export function WeddingTemplateDetail({
     currentIndex < allTemplates.length - 1 ? allTemplates[currentIndex + 1] : allTemplates[0];
 
   return (
-    <div className="w-full min-h-screen py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-stone-900 dark:text-stone-100">
+    <div className="w-full min-h-screen py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto text-foreground">
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm font-light text-stone-500 dark:text-stone-400">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm font-light text-subtle">
           <Link
             href={ROUTES.home}
-            className="hover:text-brand dark:hover:text-amber-200 transition-colors"
+            className="hover:text-brand transition-colors"
           >
             Inicio
           </Link>
-          <span className="text-stone-300 dark:text-stone-600">&bull;</span>
+          <span className="text-bullet">&bull;</span>
           <Link
             href={ROUTES.wedding}
-            className="hover:text-brand dark:hover:text-amber-200 transition-colors"
+            className="hover:text-brand transition-colors"
           >
             Colección Bodas
           </Link>
-          <span className="text-stone-300 dark:text-stone-600">&bull;</span>
-          <span className="font-medium text-stone-900 dark:text-white font-serif-luxury">
+          <span className="text-bullet">&bull;</span>
+          <span className="font-medium text-ink font-serif-luxury">
             Modelo {template.number}: {template.name}
           </span>
         </nav>
 
         <Link
           href={ROUTES.weddingCatalog}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-stone-600 hover:text-brand dark:text-stone-300 dark:hover:text-amber-200 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-brand transition-colors"
         >
           <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -62,31 +62,31 @@ export function WeddingTemplateDetail({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16 sm:mb-20">
         <div className="lg:col-span-7 flex flex-col justify-center">
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="font-serif-luxury text-[11px] font-semibold tracking-wider uppercase px-3 py-0.5 rounded-full bg-brand text-white dark:bg-amber-300 dark:text-stone-950 shadow-xs">
+            <span className="font-serif-luxury text-[11px] font-semibold tracking-wider uppercase px-3 py-0.5 rounded-full bg-brand text-on-cta shadow-xs">
               Modelo {template.number}
             </span>
-            <span className="text-[11px] font-medium uppercase tracking-wider text-stone-600 dark:text-stone-300 bg-surface dark:bg-stone-800 border border-stone-200 dark:border-white/10 px-3 py-0.5 rounded-full">
+            <span className="text-[11px] font-medium uppercase tracking-wider text-muted bg-chip border border-line-soft px-3 py-0.5 rounded-full">
               {template.styleTag}
             </span>
           </div>
 
-          <h1 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 dark:text-white leading-[1.12]">
+          <h1 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-ink leading-[1.12]">
             {template.name}
           </h1>
-          <p className="font-serif-luxury text-lg sm:text-xl text-stone-700 dark:text-amber-200 font-light mt-1">
+          <p className="font-serif-luxury text-lg sm:text-xl text-emphasis font-light mt-1">
             Diseño para {template.couplesNames}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 mt-3 text-xs sm:text-sm text-stone-500 dark:text-stone-400 font-light">
+          <div className="flex flex-wrap items-center gap-4 mt-3 text-xs sm:text-sm text-subtle font-light">
             <span className="flex items-center gap-1.5">
-              <svg className="size-4 text-brand-mid dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="size-4 text-brand-mid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Fecha Ref: <strong className="font-medium text-stone-800 dark:text-stone-200">{template.dateExample}</strong>
+              Fecha Ref: <strong className="font-medium text-ink-soft">{template.dateExample}</strong>
             </span>
             <span>&bull;</span>
             <span className="flex items-center gap-1.5">
-              <svg className="size-4 text-brand-mid dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="size-4 text-brand-mid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
@@ -94,11 +94,11 @@ export function WeddingTemplateDetail({
             </span>
           </div>
 
-          <div className="mt-6 p-5 sm:p-6 rounded-3xl bg-surface dark:bg-stone-900/60 border border-line dark:border-white/10 shadow-xs">
-            <h2 className="text-xs font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 font-semibold mb-2">
+          <div className="mt-6 p-5 sm:p-6 rounded-3xl bg-surface border border-line shadow-xs">
+            <h2 className="text-xs font-serif-luxury uppercase tracking-[0.2em] text-brand font-semibold mb-2">
               Concepto Editorial del Diseño
             </h2>
-            <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-muted font-light leading-relaxed">
               {template.story}
             </p>
           </div>
@@ -110,7 +110,7 @@ export function WeddingTemplateDetail({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-brand hover:bg-brand-deep dark:bg-linear-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-xs sm:text-sm shadow-md transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full btn-primary font-medium text-xs sm:text-sm transition-all"
             >
               <span>Cotizar este Modelo por WhatsApp</span>
               <span aria-hidden="true">&rarr;</span>
@@ -123,7 +123,7 @@ export function WeddingTemplateDetail({
                 href={template.demoHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-surface dark:bg-stone-800 text-stone-800 dark:text-white font-medium text-xs sm:text-sm shadow-xs transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-line-strong hover:border-line-hover bg-chip text-ink font-medium text-xs sm:text-sm shadow-xs transition-all"
               >
                 <span>Ver Invitación en Vivo (Demo)</span>
                 <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +135,7 @@ export function WeddingTemplateDetail({
         </div>
 
         <div className="lg:col-span-5">
-          <div className="relative w-full rounded-4xl sm:rounded-5xl overflow-hidden border border-stone-200/80 dark:border-white/15 bg-surface dark:bg-stone-900 shadow-[0_12px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col">
+          <div className="relative w-full rounded-4xl sm:rounded-5xl overflow-hidden border border-line bg-canvas shadow-[var(--shadow-media)] flex flex-col">
             {template.previewImage ? (
               <div className="relative w-full h-85 sm:h-100 overflow-hidden">
                 <Image
@@ -153,26 +153,26 @@ export function WeddingTemplateDetail({
                 </div>
               </div>
             ) : (
-              <div className="relative w-full h-85 sm:h-100 flex flex-col items-center justify-center p-8 bg-surface dark:bg-linear-to-br dark:from-[#24211e] dark:via-[#1c1917] dark:to-[#141210]">
-                <div className="absolute inset-4 border border-stone-300/60 dark:border-white/10 rounded-3xl pointer-events-none" />
-                <div className="size-16 rounded-2xl bg-brand text-on-brand flex items-center justify-center font-serif-luxury text-2xl font-bold mb-3 shadow-md">
+              <div className="preview-fallback relative w-full h-85 sm:h-100 flex flex-col items-center justify-center p-8">
+                <div className="absolute inset-4 border border-line-strong rounded-3xl pointer-events-none" />
+                <div className="mark size-16 rounded-2xl flex items-center justify-center font-serif-luxury text-2xl font-bold mb-3 shadow-md">
                   F{template.number}
                 </div>
-                <p className="font-serif-luxury text-xs uppercase tracking-[0.25em] text-stone-400">
+                <p className="font-serif-luxury text-xs uppercase tracking-[0.25em] text-faint">
                   Modelo en Preparación
                 </p>
-                <h3 className="font-serif-luxury text-2xl font-normal text-stone-800 dark:text-stone-200 text-center mt-1">
+                <h3 className="font-serif-luxury text-2xl font-normal text-ink-soft text-center mt-1">
                   {template.couplesNames}
                 </h3>
-                <div className="w-12 h-px bg-stone-300 dark:bg-white/20 my-3" />
-                <p className="text-xs text-stone-500 dark:text-stone-400 font-light text-center max-w-xs">
+                <div className="rule w-12 h-px my-3" />
+                <p className="text-xs text-subtle font-light text-center max-w-xs">
                   {template.styleTag} &bull; {template.locationExample}
                 </p>
               </div>
             )}
 
             <div
-              className={`p-4 dark:bg-linear-to-r ${template.theme.accentGradient} text-white flex items-center justify-between text-xs`}
+              className={`model-wash model-wash-r p-4 ${template.theme.accentGradient} text-white flex items-center justify-between text-xs`}
               style={{ backgroundColor: template.theme.accent }}
             >
               <span className="font-serif-luxury tracking-wider">Colección FestanovaCo Bodas</span>
@@ -188,33 +188,33 @@ export function WeddingTemplateDetail({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="p-6 sm:p-7 rounded-3xl bg-surface dark:bg-stone-900/60 border border-line dark:border-white/10 shadow-xs flex flex-col justify-between"
+          className="p-6 sm:p-7 rounded-3xl bg-surface border border-line shadow-xs flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="size-9 rounded-xl bg-brand-muted dark:bg-amber-950/40 text-brand dark:text-amber-200 flex items-center justify-center border border-brand-line/60 dark:border-amber-300/30">
+              <div className="size-9 rounded-xl bg-brand-muted text-brand flex items-center justify-center border border-brand-line">
                 <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                 </svg>
               </div>
-              <h3 className="font-serif-luxury text-lg font-medium text-stone-900 dark:text-white">
+              <h3 className="font-serif-luxury text-lg font-medium text-ink">
                 Paleta de Colores
               </h3>
             </div>
-            <p className="text-xs text-stone-500 dark:text-stone-400 font-light mb-4">
+            <p className="text-xs text-subtle font-light mb-4">
               Combinación armónica seleccionada para este modelo:
             </p>
 
             <div className="space-y-2.5">
               {template.colors.map((color, idx) => (
-                <div key={idx} className="flex items-center justify-between p-2 rounded-xl bg-background dark:bg-stone-800/60 border border-stone-200/60 dark:border-white/5">
+                <div key={idx} className="flex items-center justify-between p-2 rounded-xl bg-inset border border-line-faint">
                   <div className="flex items-center gap-2.5">
                     <span
                       className="size-6 rounded-full border border-black/15 shadow-2xs shrink-0"
                       style={{ backgroundColor: color.hex }}
                     />
                     <div className="flex flex-col">
-                      <span className="text-xs font-medium text-stone-800 dark:text-stone-200 leading-none">
+                      <span className="text-xs font-medium text-ink-soft leading-none">
                         {color.name}
                       </span>
                       <span className="text-[10px] text-stone-400 font-light mt-0.5">
@@ -222,14 +222,14 @@ export function WeddingTemplateDetail({
                       </span>
                     </div>
                   </div>
-                  <span className="font-mono text-[10px] text-stone-500 dark:text-stone-400 font-medium">
+                  <span className="font-mono text-[10px] text-subtle font-medium">
                     {color.hex}
                   </span>
                 </div>
               ))}
             </div>
           </div>
-          <p className="text-[11px] text-stone-400 dark:text-stone-500 font-light mt-4 pt-3 border-t border-stone-100 dark:border-white/10">
+          <p className="text-[11px] text-faint font-light mt-4 pt-3 border-t border-line-faint">
             * Se pueden personalizar los tonos según tus flores o decoración.
           </p>
         </motion.div>
@@ -239,55 +239,55 @@ export function WeddingTemplateDetail({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="p-6 sm:p-7 rounded-3xl bg-surface dark:bg-stone-900/60 border border-line dark:border-white/10 shadow-xs flex flex-col justify-between"
+          className="p-6 sm:p-7 rounded-3xl bg-surface border border-line shadow-xs flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="size-9 rounded-xl bg-brand-muted dark:bg-amber-950/40 text-brand dark:text-amber-200 flex items-center justify-center border border-brand-line/60 dark:border-amber-300/30">
+              <div className="size-9 rounded-xl bg-brand-muted text-brand flex items-center justify-center border border-brand-line">
                 <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12 0c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
               </div>
-              <h3 className="font-serif-luxury text-lg font-medium text-stone-900 dark:text-white">
+              <h3 className="font-serif-luxury text-lg font-medium text-ink">
                 Música & Ambientación
               </h3>
             </div>
-            <p className="text-xs text-stone-500 dark:text-stone-400 font-light mb-4">
+            <p className="text-xs text-subtle font-light mb-4">
               Melodía sugerida para la experiencia de apertura:
             </p>
 
-            <div className="p-4 rounded-2xl bg-surface-sunken dark:bg-linear-to-br dark:from-stone-900 dark:to-stone-950 text-stone-900 dark:text-white shadow-xs border border-line dark:border-white/10">
+            <div className="p-4 rounded-2xl bg-surface-sunken text-ink shadow-xs border border-line">
               <div className="flex items-center gap-3 mb-3">
-                <div className="size-10 rounded-xl bg-brand dark:bg-amber-400 text-on-brand dark:text-stone-950 flex items-center justify-center font-serif-luxury font-bold text-sm shrink-0 shadow-xs">
+                <div className="size-10 rounded-xl bg-brand text-on-brand flex items-center justify-center font-serif-luxury font-bold text-sm shrink-0 shadow-xs">
                   ♫
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-xs font-medium text-stone-900 dark:text-white truncate">{template.music.title}</p>
-                  <p className="text-[10px] text-stone-500 dark:text-stone-400 truncate">{template.music.artist}</p>
+                  <p className="text-xs font-medium text-ink truncate">{template.music.title}</p>
+                  <p className="text-[10px] text-subtle truncate">{template.music.artist}</p>
                 </div>
               </div>
 
-              <div className="w-full h-1.5 bg-stone-200/80 dark:bg-white/10 rounded-full overflow-hidden mb-2">
-                <div className="w-2/5 h-full bg-brand-mid dark:bg-linear-to-r dark:from-[#fae2ab] dark:to-[#ebd097] rounded-full" />
+              <div className="w-full h-1.5 bg-line rounded-full overflow-hidden mb-2">
+                <div className="progress-fill w-2/5 h-full rounded-full" />
               </div>
 
-              <div className="flex items-center justify-between text-[10px] text-stone-500 dark:text-stone-400">
-                <span>Género: <strong className="text-stone-800 dark:text-stone-200">{template.music.genre}</strong></span>
+              <div className="flex items-center justify-between text-[10px] text-subtle">
+                <span>Género: <strong className="text-ink-soft">{template.music.genre}</strong></span>
                 <span>Auto-play sutil</span>
               </div>
             </div>
 
-            <div className="mt-4 p-3 rounded-xl bg-background dark:bg-stone-800/60 border border-stone-200/60 dark:border-white/5">
-              <span className="text-[10px] uppercase font-semibold text-brand dark:text-amber-200 tracking-wider">
+            <div className="mt-4 p-3 rounded-xl bg-inset border border-line-faint">
+              <span className="text-[10px] uppercase font-semibold text-brand tracking-wider">
                 Vibra que transmite:
               </span>
-              <p className="text-xs text-stone-600 dark:text-stone-300 font-light mt-1">
+              <p className="text-xs text-muted font-light mt-1">
                 {template.music.vibe}
               </p>
             </div>
           </div>
 
-          <p className="text-[11px] text-stone-400 dark:text-stone-500 font-light mt-4 pt-3 border-t border-stone-100 dark:border-white/10">
+          <p className="text-[11px] text-faint font-light mt-4 pt-3 border-t border-line-faint">
             * Puedes elegir cualquier canción de tu historia de amor.
           </p>
         </motion.div>
@@ -297,56 +297,56 @@ export function WeddingTemplateDetail({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.5, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-          className="p-6 sm:p-7 rounded-3xl bg-surface dark:bg-stone-900/60 border border-line dark:border-white/10 shadow-xs flex flex-col justify-between"
+          className="p-6 sm:p-7 rounded-3xl bg-surface border border-line shadow-xs flex flex-col justify-between"
         >
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="size-9 rounded-xl bg-brand-muted dark:bg-amber-950/40 text-brand dark:text-amber-200 flex items-center justify-center border border-brand-line/60 dark:border-amber-300/30">
+              <div className="size-9 rounded-xl bg-brand-muted text-brand flex items-center justify-center border border-brand-line">
                 <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="font-serif-luxury text-lg font-medium text-stone-900 dark:text-white">
+              <h3 className="font-serif-luxury text-lg font-medium text-ink">
                 Capacidad de Imágenes
               </h3>
             </div>
-            <p className="text-xs text-stone-500 dark:text-stone-400 font-light mb-4">
+            <p className="text-xs text-subtle font-light mb-4">
               Distribución de fotos en alta resolución para la plantilla:
             </p>
 
             <div className="grid grid-cols-3 gap-2 text-center mb-4">
-              <div className="p-2.5 rounded-2xl bg-background dark:bg-stone-800/80 border border-stone-200/70 dark:border-white/10">
-                <span className="font-serif-luxury text-xl sm:text-2xl font-bold text-brand dark:text-amber-200 block">
+              <div className="p-2.5 rounded-2xl bg-inset border border-line-soft">
+                <span className="font-serif-luxury text-xl sm:text-2xl font-bold text-brand block">
                   {template.photoCapacity.galleryMaxPhotos}
                 </span>
-                <span className="text-[10px] text-stone-500 dark:text-stone-400 font-light">
+                <span className="text-[10px] text-subtle font-light">
                   Galería Álbum
                 </span>
               </div>
-              <div className="p-2.5 rounded-2xl bg-background dark:bg-stone-800/80 border border-stone-200/70 dark:border-white/10">
-                <span className="font-serif-luxury text-xl sm:text-2xl font-bold text-brand dark:text-amber-200 block">
+              <div className="p-2.5 rounded-2xl bg-inset border border-line-soft">
+                <span className="font-serif-luxury text-xl sm:text-2xl font-bold text-brand block">
                   {template.photoCapacity.coverPhotos}
                 </span>
-                <span className="text-[10px] text-stone-500 dark:text-stone-400 font-light">
+                <span className="text-[10px] text-subtle font-light">
                   Portada / Header
                 </span>
               </div>
-              <div className="p-2.5 rounded-2xl bg-background dark:bg-stone-800/80 border border-stone-200/70 dark:border-white/10">
-                <span className="font-serif-luxury text-xl sm:text-2xl font-bold text-brand dark:text-amber-200 block">
+              <div className="p-2.5 rounded-2xl bg-inset border border-line-soft">
+                <span className="font-serif-luxury text-xl sm:text-2xl font-bold text-brand block">
                   {template.photoCapacity.timelinePhotos}
                 </span>
-                <span className="text-[10px] text-stone-500 dark:text-stone-400 font-light">
+                <span className="text-[10px] text-subtle font-light">
                   Timeline
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-stone-600 dark:text-stone-300 font-light leading-relaxed">
+            <p className="text-xs text-muted font-light leading-relaxed">
               {template.photoCapacity.description}
             </p>
           </div>
 
-          <p className="text-[11px] text-stone-400 dark:text-stone-500 font-light mt-4 pt-3 border-t border-stone-100 dark:border-white/10">
+          <p className="text-[11px] text-faint font-light mt-4 pt-3 border-t border-line-faint">
             * Optimización automática para carga ultrarrápida en smartphones.
           </p>
         </motion.div>
@@ -360,13 +360,13 @@ export function WeddingTemplateDetail({
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-2xl mx-auto mb-10"
         >
-          <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 border border-line-strong dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-surface dark:bg-amber-950/40 shadow-xs">
+          <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand border border-badge-line px-3.5 py-1 rounded-full bg-badge shadow-[var(--shadow-badge)]">
             Todo Incluido
           </span>
-          <h2 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-stone-900 dark:text-white mt-3">
+          <h2 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-ink mt-3">
             Módulos y características de esta plantilla
           </h2>
-          <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-light mt-2">
+          <p className="text-xs sm:text-sm text-muted font-light mt-2">
             Cada sección está diseñada para brindar la máxima comodidad tanto a los novios como a sus invitados.
           </p>
         </motion.div>
@@ -384,21 +384,21 @@ export function WeddingTemplateDetail({
                 ease: [0.22, 1, 0.36, 1],
               }}
               whileHover={{ y: -4, transition: { duration: 0.25 } }}
-              className="p-5 sm:p-6 rounded-3xl bg-surface hover:bg-surface-hover dark:bg-stone-900/60 dark:hover:bg-stone-800/80 border border-line hover:border-accent dark:border-white/10 dark:hover:border-amber-300/30 transition-all duration-300 shadow-xs flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-3xl bg-surface hover:bg-surface-hover border border-line hover:border-accent transition-all duration-300 shadow-xs flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="size-7 rounded-full bg-brand-muted-strong dark:bg-amber-950/60 text-brand dark:text-amber-200 text-xs font-semibold flex items-center justify-center">
+                  <span className="size-7 rounded-full bg-brand-muted-strong text-brand text-xs font-semibold flex items-center justify-center">
                     0{idx + 1}
                   </span>
-                  <span className="text-[10px] font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-2.5 py-0.5 rounded-full">
+                  <span className="text-[10px] font-medium uppercase tracking-wider text-subtle bg-chip px-2.5 py-0.5 rounded-full">
                     {module.tag}
                   </span>
                 </div>
-                <h4 className="font-serif-luxury text-base font-medium text-stone-900 dark:text-white mb-1.5">
+                <h4 className="font-serif-luxury text-base font-medium text-ink mb-1.5">
                   {module.title}
                 </h4>
-                <p className="text-xs text-stone-600 dark:text-stone-300 font-light leading-relaxed">
+                <p className="text-xs text-muted font-light leading-relaxed">
                   {module.description}
                 </p>
               </div>
@@ -412,18 +412,18 @@ export function WeddingTemplateDetail({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="p-6 sm:p-10 rounded-3xl sm:rounded-4xl bg-surface dark:bg-linear-to-b dark:from-stone-900/90 dark:to-stone-950/95 border border-line dark:border-white/15 shadow-sm mb-16 sm:mb-20"
+        className="panel p-6 sm:p-10 rounded-3xl sm:rounded-4xl border border-line mb-16 sm:mb-20"
       >
         <div className="max-w-3xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
-            <span className="size-8 rounded-full bg-brand text-white dark:bg-amber-300 dark:text-stone-950 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="size-8 rounded-full bg-brand text-on-cta flex items-center justify-center text-sm font-bold shrink-0">
               ✓
             </span>
-            <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-normal text-stone-900 dark:text-white leading-snug">
+            <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-normal text-ink leading-snug">
               ¿Cómo personalizamos este modelo para tu matrimonio?
             </h3>
           </div>
-          <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-light leading-relaxed mb-6">
+          <p className="text-xs sm:text-sm text-muted font-light leading-relaxed mb-6">
             Al ordenar tu invitación con FestanovaCo, nosotros nos encargamos de todo el montaje técnico y diseño. Tú solo nos envías tu información y nosotros preparamos tu enlace exclusivo.
           </p>
 
@@ -431,9 +431,9 @@ export function WeddingTemplateDetail({
             {template.customizationNotes.map((note, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-2.5 p-3.5 sm:p-4 rounded-2xl bg-surface/80 dark:bg-white/5 border border-stone-200/70 dark:border-white/10 text-xs sm:text-sm text-stone-700 dark:text-stone-200 leading-relaxed"
+                className="flex items-start gap-2.5 p-3.5 sm:p-4 rounded-2xl bg-ghost border border-line-soft text-xs sm:text-sm text-ink-soft leading-relaxed"
               >
-                <span className="text-emerald-700 dark:text-amber-300 font-bold shrink-0 mt-0.5">&bull;</span>
+                <span className="text-brand-mid font-bold shrink-0 mt-0.5">&bull;</span>
                 <span>{note}</span>
               </li>
             ))}
@@ -446,20 +446,20 @@ export function WeddingTemplateDetail({
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        className="relative overflow-hidden rounded-5xl sm:rounded-7xl border border-line dark:border-white/20 bg-surface dark:bg-linear-to-b dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_var(--shadow-brand-soft)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)] mb-16 sm:mb-20"
+        className="panel relative overflow-hidden rounded-5xl sm:rounded-7xl border border-line p-8 sm:p-14 text-center backdrop-blur-2xl mb-16 sm:mb-20"
       >
         <div className="relative z-10 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-line/60 dark:border-amber-300/30 bg-brand-muted/90 dark:bg-amber-950/40 backdrop-blur-md mb-6">
-            <span className="size-2 rounded-full bg-brand-dot dark:bg-amber-400 animate-pulse" />
-            <span className="text-[11px] font-medium uppercase tracking-widest text-brand-deep dark:text-amber-200">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-line bg-brand-muted backdrop-blur-md mb-6">
+            <span className="size-2 rounded-full bg-brand-dot animate-pulse" />
+            <span className="text-[11px] font-medium uppercase tracking-widest text-brand">
               Atención Directa &bull; Respuesta Rápida
             </span>
           </div>
 
-          <h3 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-stone-900 dark:text-white">
+          <h3 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-ink">
             ¿Te gustó el modelo {template.name}?
           </h3>
-          <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-light leading-relaxed mt-3 mb-8">
+          <p className="text-sm sm:text-base text-muted font-light leading-relaxed mt-3 mb-8">
             Escríbenos directamente a WhatsApp o envíanos un correo para consultar fecha de entrega, cotización y opciones de personalización para tu boda.
           </p>
 
@@ -470,7 +470,7 @@ export function WeddingTemplateDetail({
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand hover:bg-brand-deep dark:bg-linear-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-sm shadow-[0_8px_24px_var(--shadow-brand-strong)] dark:shadow-[0_8px_24px_rgba(216,176,102,0.35)] hover:shadow-[0_12px_28px_var(--shadow-brand-hover)] dark:hover:shadow-[0_12px_32px_rgba(216,176,102,0.5)] transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full btn-primary btn-asesoria font-medium text-sm transition-all duration-300"
             >
               <span>Pedir Asesoría para este Modelo</span>
               <span aria-hidden="true">&rarr;</span>
@@ -478,29 +478,29 @@ export function WeddingTemplateDetail({
 
             <Link
               href={ROUTES.weddingCatalog}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-surface/70 hover:bg-surface dark:bg-white/5 dark:hover:bg-white/10 text-stone-800 dark:text-white text-sm font-medium transition-all duration-300 shadow-xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-line-strong hover:border-line-hover bg-ghost hover:bg-ghost-hover text-ink text-sm font-medium transition-all duration-300 shadow-xs"
             >
               <span>Ver Otros Modelos</span>
             </Link>
           </div>
 
-          <p className="text-[11px] text-stone-500 dark:text-stone-400 font-light mt-8 tracking-wide">
+          <p className="text-[11px] text-subtle font-light mt-8 tracking-wide">
             FestanovaCo &bull; Papelería Digital & Experiencias Web de Boda
           </p>
         </div>
       </motion.div>
 
-      <div className="pt-8 border-t border-stone-200/80 dark:border-white/10 flex items-center justify-between gap-4">
+      <div className="pt-8 border-t border-line flex items-center justify-between gap-4">
         <Link
           href={`/wedding/${prevTemplate.id}`}
-          className="group flex items-center gap-2 text-xs text-stone-600 dark:text-stone-400 hover:text-brand dark:hover:text-amber-200"
+          className="group flex items-center gap-2 text-xs text-subtle hover:text-brand"
         >
-          <span className="size-8 rounded-full border border-stone-300 dark:border-white/20 flex items-center justify-center group-hover:border-brand-mid transition-colors">
+          <span className="size-8 rounded-full border border-line-strong flex items-center justify-center group-hover:border-brand-mid transition-colors">
             &larr;
           </span>
           <div className="hidden sm:flex flex-col text-left">
             <span className="text-[10px] text-stone-400">Anterior</span>
-            <span className="font-serif-luxury font-medium text-stone-900 dark:text-white">
+            <span className="font-serif-luxury font-medium text-ink">
               {prevTemplate.name}
             </span>
           </div>
@@ -508,22 +508,22 @@ export function WeddingTemplateDetail({
 
         <Link
           href={ROUTES.weddingCatalog}
-          className="text-xs font-serif-luxury uppercase tracking-widest text-brand dark:text-amber-200 font-semibold hover:underline"
+          className="text-xs font-serif-luxury uppercase tracking-widest text-brand font-semibold hover:underline"
         >
           Catálogo Completo
         </Link>
 
         <Link
           href={`/wedding/${nextTemplate.id}`}
-          className="group flex items-center gap-2 text-xs text-stone-600 dark:text-stone-400 hover:text-brand dark:hover:text-amber-200"
+          className="group flex items-center gap-2 text-xs text-subtle hover:text-brand"
         >
           <div className="hidden sm:flex flex-col text-right">
             <span className="text-[10px] text-stone-400">Siguiente</span>
-            <span className="font-serif-luxury font-medium text-stone-900 dark:text-white">
+            <span className="font-serif-luxury font-medium text-ink">
               {nextTemplate.name}
             </span>
           </div>
-          <span className="size-8 rounded-full border border-stone-300 dark:border-white/20 flex items-center justify-center group-hover:border-brand-mid transition-colors">
+          <span className="size-8 rounded-full border border-line-strong flex items-center justify-center group-hover:border-brand-mid transition-colors">
             &rarr;
           </span>
         </Link>

@@ -24,7 +24,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#C5A880] via-[#A88B60] to-[#1B4332]",
         glowColor: "rgba(197, 168, 128, 0.35)",
         pillBg: "bg-[#1B4332] text-white",
-        borderHover: "hover:border-accent dark:hover:border-amber-300/60",
+        borderHover: "hover:border-accent",
       },
       features: [
         "Música de fondo",
@@ -113,7 +113,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#607D5E] via-[#4A6348] to-[#2D3E2C]",
         glowColor: "rgba(96, 125, 94, 0.35)",
         pillBg: "bg-[#3A4D39] text-white",
-        borderHover: "hover:border-emerald-400/50 dark:hover:border-emerald-300/40",
+        borderHover: "hover:border-mint-line",
       },
       features: [
         "Ilustraciones botánicas",
@@ -190,7 +190,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#6C6C70] via-[#444448] to-[#1C1C1E]",
         glowColor: "rgba(108, 108, 112, 0.35)",
         pillBg: "bg-stone-800 text-white",
-        borderHover: "hover:border-stone-400/60 dark:hover:border-stone-300/40",
+        borderHover: "hover:border-ash-line",
       },
       features: [
         "Estética monocromática",
@@ -266,7 +266,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#D97D54] via-[#B95D34] to-[#7C3218]",
         glowColor: "rgba(217, 125, 84, 0.35)",
         pillBg: "bg-[#C86D51] text-white",
-        borderHover: "hover:border-amber-400/60 dark:hover:border-amber-300/40",
+        borderHover: "hover:border-honey-line",
       },
       features: [
         "Guía de hospedaje",
@@ -342,7 +342,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#D4AF37] via-[#B89628] to-[#7D6415]",
         glowColor: "rgba(212, 175, 55, 0.35)",
         pillBg: "bg-[#A67C52] text-white",
-        borderHover: "hover:border-accent dark:hover:border-amber-200/50",
+        borderHover: "hover:border-accent",
       },
       features: [
         "Sello heráldico animado",
@@ -418,7 +418,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#3B5B8C] via-[#243B61] to-[#121F36]",
         glowColor: "rgba(59, 91, 140, 0.35)",
         pillBg: "bg-[#1B2A4A] text-white",
-        borderHover: "hover:border-blue-300/60 dark:hover:border-blue-300/40",
+        borderHover: "hover:border-navy-line",
       },
       features: [
         "Monograma de novios",
@@ -494,7 +494,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#8B2D38] via-[#661E27] to-[#3B0E14]",
         glowColor: "rgba(139, 45, 56, 0.35)",
         pillBg: "bg-[#5C1D24] text-white",
-        borderHover: "hover:border-rose-400/50 dark:hover:border-rose-300/40",
+        borderHover: "hover:border-blush-line",
       },
       features: [
         "Menú & maridaje",
@@ -570,7 +570,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#4A3245] via-[#2D1B29] to-[#160B14]",
         glowColor: "rgba(74, 50, 69, 0.35)",
         pillBg: "bg-[#121214] text-white",
-        borderHover: "hover:border-rose-300/50 dark:hover:border-rose-300/40",
+        borderHover: "hover:border-blush-line",
       },
       features: [
         "Modo fiesta & after",
@@ -646,7 +646,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#4A7C9B] via-[#2F5873] to-[#173347]",
         glowColor: "rgba(74, 124, 155, 0.35)",
         pillBg: "bg-[#355C7D] text-white",
-        borderHover: "hover:border-sky-300/60 dark:hover:border-sky-300/40",
+        borderHover: "hover:border-sea-line",
       },
       features: [
         "Tips para invitados",
@@ -722,7 +722,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         accentGradient: "from-[#9E8268] via-[#7A624A] to-[#473626]",
         glowColor: "rgba(158, 130, 104, 0.35)",
         pillBg: "bg-[#7A624A] text-white",
-        borderHover: "hover:border-accent dark:hover:border-amber-300/50",
+        borderHover: "hover:border-accent",
       },
       features: [
         "Efecto sobre digital",

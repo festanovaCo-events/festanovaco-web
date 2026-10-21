@@ -16,7 +16,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
   if (!mounted) {
     return (
       <div
-        className={`w-9 h-9 rounded-full border border-stone-200/60 dark:border-white/15 bg-stone-100/50 dark:bg-white/[0.06] ${className}`}
+        className={`w-9 h-9 rounded-full border border-toggle-border bg-toggle ${className}`}
         aria-hidden="true"
       />
     );
@@ -30,14 +30,9 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       onClick={toggleTheme}
       aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       title={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
-      className={`relative flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 dark:focus-visible:ring-amber-300/50 ${
-        isDark
-          ? "border-amber-300/30 bg-stone-800/80 text-amber-200 hover:bg-stone-700 hover:border-amber-300/60 shadow-[0_2px_10px_rgba(216,176,102,0.15)]"
-          : "border-stone-200 bg-stone-100/80 text-stone-700 hover:bg-stone-200/80 hover:text-brand-deep shadow-xs"
-      } ${className}`}
+      className={`relative flex items-center justify-center w-9 h-9 rounded-full border border-toggle-border bg-toggle text-toggle-fg shadow-[var(--shadow-toggle)] transition-all duration-300 hover:bg-toggle-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 ${className}`}
     >
       {isDark ? (
-        // Sun Icon
         <svg
           className="w-4 h-4 transition-transform duration-300 rotate-0 hover:rotate-45"
           fill="none"
@@ -52,7 +47,6 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
           />
         </svg>
       ) : (
-        // Moon Icon
         <svg
           className="w-4 h-4 transition-transform duration-300 -rotate-12 hover:rotate-0"
           fill="none"

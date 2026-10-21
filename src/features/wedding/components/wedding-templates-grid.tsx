@@ -32,22 +32,22 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
   return (
     <section
       id="catalogo"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-stone-200/80 dark:border-white/10 scroll-mt-20"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-line scroll-mt-20"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mb-10 sm:mb-12 border-b border-stone-200/80 dark:border-white/10 pb-6"
+        className="mb-10 sm:mb-12 border-b border-line pb-6"
       >
-        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 border border-line-strong dark:border-amber-300/40 px-3 py-0.5 rounded-full bg-surface dark:bg-amber-950/40 shadow-xs">
+        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand border border-badge-line px-3 py-0.5 rounded-full bg-badge shadow-[var(--shadow-badge)]">
           Catálogo Editorial &bull; Colección Exclusiva
         </span>
-        <h2 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-stone-900 dark:text-white mt-3">
+        <h2 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-ink mt-3">
           Explora nuestros modelos de boda
         </h2>
-        <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-light mt-1 max-w-xl">
+        <p className="text-xs sm:text-sm text-muted font-light mt-1 max-w-xl">
           Descubre plantillas concebidas con papelería digital de alta gama, música ambiental, itinerario y confirmación en vivo.
         </p>
       </motion.div>
@@ -77,12 +77,12 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 sm:mt-16 pt-8 border-t border-stone-200/80 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-12 sm:mt-16 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="text-xs text-stone-500 dark:text-stone-400 font-light">
-            Mostrando <span className="font-medium text-stone-900 dark:text-white">{startIndex + 1}</span> a{" "}
-            <span className="font-medium text-stone-900 dark:text-white">{endIndex}</span> de{" "}
-            <span className="font-medium text-stone-900 dark:text-white">{templates.length}</span> modelos
+          <p className="text-xs text-subtle font-light">
+            Mostrando <span className="font-medium text-ink">{startIndex + 1}</span> a{" "}
+            <span className="font-medium text-ink">{endIndex}</span> de{" "}
+            <span className="font-medium text-ink">{templates.length}</span> modelos
           </p>
 
           <div className="flex items-center gap-2">
@@ -92,8 +92,8 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
               onClick={() => handlePageChange(safeCurrentPage - 1)}
               className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium border transition-colors ${
                 safeCurrentPage === 1
-                  ? "opacity-40 cursor-not-allowed border-stone-200 dark:border-white/10 text-stone-400 dark:text-stone-600"
-                  : "cursor-pointer border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-surface dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:bg-stone-50 dark:hover:bg-stone-700"
+                  ? "opacity-40 cursor-not-allowed border-line-soft text-faint"
+                  : "cursor-pointer border-line-strong hover:border-line-hover bg-chip text-ink-soft hover:bg-chip-hover"
               }`}
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,8 +110,8 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
                   onClick={() => handlePageChange(page)}
                   className={`w-9 h-9 rounded-xl text-xs font-medium flex items-center justify-center transition-all cursor-pointer ${
                     safeCurrentPage === page
-                      ? "bg-brand text-white dark:bg-amber-300 dark:text-stone-950 font-semibold shadow-xs"
-                      : "bg-surface dark:bg-stone-800/80 text-stone-600 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-700 border border-stone-200 dark:border-white/10"
+                      ? "bg-brand text-on-cta font-semibold shadow-xs"
+                      : "bg-chip text-muted hover:bg-chip-hover border border-line-soft"
                   }`}
                 >
                   {page}
@@ -125,8 +125,8 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
               onClick={() => handlePageChange(safeCurrentPage + 1)}
               className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium border transition-colors ${
                 safeCurrentPage === totalPages
-                  ? "opacity-40 cursor-not-allowed border-stone-200 dark:border-white/10 text-stone-400 dark:text-stone-600"
-                  : "cursor-pointer border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-surface dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:bg-stone-50 dark:hover:bg-stone-700"
+                  ? "opacity-40 cursor-not-allowed border-line-soft text-faint"
+                  : "cursor-pointer border-line-strong hover:border-line-hover bg-chip text-ink-soft hover:bg-chip-hover"
               }`}
             >
               <span>Siguiente</span>

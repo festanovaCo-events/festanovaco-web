@@ -1,9 +1,58 @@
 "use client";
 
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import type { WeddingTemplate } from "../types/wedding-templates.types";
+
+const washHotStyle = {
+  backgroundColor: "#f7f3eb",
+  color: "#161311",
+  borderColor: "#f7f3eb",
+};
+
+function WashButton({
+  href,
+  external = false,
+  children,
+}: {
+  href: string;
+  external?: boolean;
+  children: ReactNode;
+}) {
+  const [hot, setHot] = useState(false);
+  const className =
+    "btn-on-wash inline-flex items-center justify-center gap-1 px-3.5 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider border cursor-pointer transition-colors duration-200 active:scale-95";
+
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        style={hot ? washHotStyle : undefined}
+        onMouseEnter={() => setHot(true)}
+        onMouseLeave={() => setHot(false)}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={className}
+      style={hot ? washHotStyle : undefined}
+      onMouseEnter={() => setHot(true)}
+      onMouseLeave={() => setHot(false)}
+    >
+      {children}
+    </Link>
+  );
+}
 
 interface WeddingTemplateCardProps {
   template: WeddingTemplate;
@@ -26,14 +75,13 @@ export function WeddingTemplateCard({
         delay: (index % 3) * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      whileHover={{ y: -6, transition: { duration: 0.28, ease: "easeOut" } }}
-      className={`group relative flex flex-col justify-between w-full h-100 sm:h-105 rounded-4xl sm:rounded-5xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.4)] border border-stone-200/80 dark:border-white/10 ${template.theme.borderHover} hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_22px_55px_rgba(0,0,0,0.6)] bg-surface dark:bg-[#1A1816] select-none`}
+      className={`group relative flex flex-col justify-between w-full h-100 sm:h-105 rounded-4xl sm:rounded-5xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-media)] border border-line ${template.theme.borderHover} bg-canvas select-none`}
     >
-      <div className="absolute inset-x-0 top-0 h-0.5 bg-accent/50 dark:bg-transparent dark:bg-linear-to-r dark:from-transparent dark:via-amber-300/60 dark:to-transparent pointer-events-none" />
+      <div className="hairline hairline-gold absolute inset-x-0 top-0 h-0.5 pointer-events-none" />
 
       <Link
         href={detailHref}
-        className="relative w-full h-56 sm:h-60 overflow-hidden bg-surface dark:bg-stone-900 shrink-0 block cursor-pointer"
+        className="relative w-full h-56 sm:h-60 overflow-hidden bg-canvas shrink-0 block cursor-pointer"
         aria-label={`Ver detalles del modelo ${template.name}`}
       >
         {template.previewImage ? (
@@ -48,17 +96,17 @@ export function WeddingTemplateCard({
             <div className="absolute inset-x-0 bottom-0 h-16 bg-black/40 pointer-events-none" />
           </div>
         ) : (
-          <div className="relative w-full h-full flex flex-col items-center justify-center p-6 bg-surface dark:bg-linear-to-br dark:from-[#24211e] dark:via-[#1c1917] dark:to-[#141210]">
-            <div className="absolute inset-3 border border-stone-300/60 dark:border-white/10 rounded-2xl pointer-events-none" />
+          <div className="preview-fallback relative w-full h-full flex flex-col items-center justify-center p-6">
+            <div className="absolute inset-3 border border-line-strong rounded-2xl pointer-events-none" />
 
-            <p className="font-serif-luxury text-[10px] uppercase tracking-[0.25em] text-stone-400 dark:text-stone-500">
+            <p className="font-serif-luxury text-[10px] uppercase tracking-[0.25em] text-faint">
               Nuestra Boda
             </p>
-            <h3 className="font-serif-luxury text-xl sm:text-2xl font-normal text-stone-800 dark:text-stone-200 mt-1">
+            <h3 className="font-serif-luxury text-xl sm:text-2xl font-normal text-ink-soft mt-1">
               {template.couplesNames}
             </h3>
-            <div className="w-8 h-px bg-stone-300 dark:bg-white/20 my-2" />
-            <p className="text-[11px] font-light text-stone-500 dark:text-stone-400 tracking-wide">
+            <div className="rule w-8 h-px my-2" />
+            <p className="text-[11px] font-light text-subtle tracking-wide">
               {template.styleTag}
             </p>
           </div>
@@ -66,8 +114,8 @@ export function WeddingTemplateCard({
 
         <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none">
           {template.isAvailable ? (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-brand/90 text-white dark:bg-amber-300 dark:text-stone-950 shadow-md backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 dark:bg-stone-900 animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-brand text-on-cta shadow-md backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-live animate-pulse" />
               {template.badge}
             </span>
           ) : (
@@ -81,10 +129,10 @@ export function WeddingTemplateCard({
       <div className="absolute top-56 sm:top-60 left-6 -translate-y-1/2 z-20">
         <Link
           href={detailHref}
-          className="relative size-14 sm:size-16 rounded-2xl p-1 bg-surface/90 dark:bg-stone-900/90 shadow-[0_8px_20px_rgba(0,0,0,0.18)] border border-white/60 dark:border-white/20 backdrop-blur-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1 cursor-pointer block"
+          className="relative size-14 sm:size-16 rounded-2xl p-1 bg-pill shadow-[0_8px_20px_rgba(0,0,0,0.18)] border border-frame backdrop-blur-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1 cursor-pointer block"
         >
-          <div className="w-full h-full rounded-xl bg-brand dark:bg-linear-to-br dark:from-[#2a241e] dark:via-[#1B4332] dark:to-[#0f0e0d] flex flex-col items-center justify-center text-white shadow-inner">
-            <span className="font-serif-luxury text-base sm:text-lg font-bold leading-none text-on-brand drop-shadow-xs">
+          <div className="monogram w-full h-full rounded-xl flex flex-col items-center justify-center shadow-inner">
+            <span className="font-serif-luxury text-base sm:text-lg font-bold leading-none text-gold drop-shadow-xs">
               F
             </span>
             <span className="text-[8px] font-mono tracking-widest uppercase text-stone-300 leading-none mt-0.5">
@@ -95,7 +143,7 @@ export function WeddingTemplateCard({
       </div>
 
       <div
-        className={`relative w-full flex-1 -mt-8 dark:bg-linear-to-br ${template.theme.accentGradient} text-white p-5 sm:p-6 flex flex-col justify-between rounded-t-5xl shadow-[0_-6px_16px_rgba(0,0,0,0.06)] transition-transform duration-300`}
+        className={`model-wash model-wash-br relative w-full flex-1 -mt-8 ${template.theme.accentGradient} text-white p-5 sm:p-6 flex flex-col justify-between rounded-t-5xl shadow-[0_-6px_16px_rgba(0,0,0,0.06)] transition-transform duration-300`}
         style={{
           backgroundColor: template.theme.accent,
         }}
@@ -122,21 +170,13 @@ export function WeddingTemplateCard({
           </div>
 
           <div className="flex items-center gap-2">
-            <Link
-              href={detailHref}
-              className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-surface/15 hover:bg-surface hover:text-stone-900 transition-all duration-300 shadow-xs active:scale-95 border border-white/30"
-            >
+            <WashButton href={detailHref}>
               <span>Detalles</span>
               <span aria-hidden="true">&rarr;</span>
-            </Link>
+            </WashButton>
 
             {template.isAvailable && template.demoHref && (
-              <a
-                href={template.demoHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden xs:inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white border border-white/70 hover:bg-surface hover:text-stone-900 transition-all duration-300 shadow-sm active:scale-95"
-              >
+              <WashButton href={template.demoHref} external>
                 <span>Demo</span>
                 <svg
                   className="w-3 h-3"
@@ -151,7 +191,7 @@ export function WeddingTemplateCard({
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
-              </a>
+              </WashButton>
             )}
           </div>
         </div>
