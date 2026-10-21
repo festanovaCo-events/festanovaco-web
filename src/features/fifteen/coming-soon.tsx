@@ -7,7 +7,7 @@ export function ComingSoon() {
 
   return (
     <section className="relative mx-auto max-w-4xl px-4 sm:px-6 py-20 sm:py-28 text-center">
-      <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 dark:bg-stone-800/90 border border-rose-200 dark:border-rose-300/30 shadow-xs backdrop-blur-md">
+      <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface/90 dark:bg-stone-800/90 border border-rose-200 dark:border-rose-300/30 shadow-xs backdrop-blur-md">
         <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
         <span className="text-[11px] font-serif-luxury tracking-widest uppercase text-rose-800 dark:text-rose-200 font-semibold">
           Colección 15 Años &bull; Próximamente
@@ -37,7 +37,7 @@ export function ComingSoon() {
         </a>
         <Link
           href={ROUTES.wedding}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-stone-300 dark:border-white/20 bg-white dark:bg-stone-800 text-stone-800 dark:text-white text-xs sm:text-sm font-medium transition-all"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-stone-300 dark:border-white/20 bg-surface dark:bg-stone-800 text-stone-800 dark:text-white text-xs sm:text-sm font-medium transition-all"
         >
           <span>Ver colección de Bodas</span>
         </Link>

@@ -23,7 +23,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#e5c583",
       glowBg: "rgba(229, 197, 131, 0.15)",
-      borderHover: "hover:border-[#C5A880] dark:hover:border-amber-300/50",
+      borderHover: "hover:border-accent dark:hover:border-amber-300/50",
       tagline: "El gran día",
     },
     iconNode: (
@@ -31,7 +31,7 @@ export const allCategories: HeroCategory[] = [
         icon={WeddingIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-emerald-900 dark:text-amber-200 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-brand dark:text-amber-200 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },
@@ -116,7 +116,7 @@ export const allCategories: HeroCategory[] = [
     theme: {
       accentColor: "#6ee7b7",
       glowBg: "rgba(110, 231, 183, 0.12)",
-      borderHover: "hover:border-emerald-300 dark:hover:border-emerald-300/40",
+      borderHover: "hover:border-brand-line dark:hover:border-emerald-300/40",
       tagline: "Grados",
     },
     iconNode: (
@@ -124,7 +124,7 @@ export const allCategories: HeroCategory[] = [
         icon={GraduationCapIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-emerald-800/80 dark:text-emerald-200 transition-transform duration-300 group-hover:scale-105"
+        className="w-10 h-10 sm:w-11 sm:h-11 text-brand-mid/80 dark:text-emerald-200 transition-transform duration-300 group-hover:scale-105"
       />
     ),
   },

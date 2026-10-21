@@ -120,7 +120,7 @@ export function WeddingFeaturesIncluded() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
       >
-        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-emerald-900 dark:text-amber-200 border border-[#D9CEBA] dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-white dark:bg-amber-950/40 shadow-xs">
+        <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand dark:text-amber-200 border border-line-strong dark:border-amber-300/40 px-3.5 py-1 rounded-full bg-surface dark:bg-amber-950/40 shadow-xs">
           Experiencia Completa
         </span>
         <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-stone-900 dark:text-white mt-4">
@@ -144,19 +144,19 @@ export function WeddingFeaturesIncluded() {
               ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="group p-6 sm:p-7 rounded-3xl border border-[#E9DFD0] hover:border-[#C5A880] dark:border-white/15 dark:hover:border-amber-300/40 bg-white hover:bg-[#FCFBF9] dark:bg-stone-900/60 dark:hover:bg-stone-800/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(27,67,50,0.08)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_16px_36px_rgba(216,176,102,0.15)] flex flex-col justify-between transition-all duration-300"
+            className="group p-6 sm:p-7 rounded-3xl border border-line hover:border-accent dark:border-white/15 dark:hover:border-amber-300/40 bg-surface hover:bg-surface-hover dark:bg-stone-900/60 dark:hover:bg-stone-800/80 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_var(--shadow-brand)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_16px_36px_rgba(216,176,102,0.15)] flex flex-col justify-between transition-all duration-300"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="size-11 rounded-2xl flex items-center justify-center bg-[#FAF6F0] dark:bg-stone-800 text-emerald-900 dark:text-amber-200 border border-[#E0D5C3] dark:border-white/10 group-hover:border-emerald-700/40 dark:group-hover:border-amber-300/40 group-hover:bg-[#F3EBE0] dark:group-hover:bg-stone-700/60 transition-all duration-300">
+                <div className="size-11 rounded-2xl flex items-center justify-center bg-surface-muted dark:bg-stone-800 text-brand dark:text-amber-200 border border-line-strong dark:border-white/10 group-hover:border-brand/40 dark:group-hover:border-amber-300/40 group-hover:bg-glow dark:group-hover:bg-stone-700/60 transition-all duration-300">
                   {feat.icon}
                 </div>
-                <span className="text-[10px] font-medium uppercase tracking-wider text-stone-600 dark:text-stone-300 bg-[#FAF8F5] dark:bg-stone-800/80 border border-stone-200 dark:border-white/10 px-2.5 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-stone-600 dark:text-stone-300 bg-background dark:bg-stone-800/80 border border-stone-200 dark:border-white/10 px-2.5 py-0.5 rounded-full">
                   {feat.badge}
                 </span>
               </div>
 
-              <h3 className="font-serif-luxury text-lg sm:text-xl font-medium text-stone-900 group-hover:text-emerald-950 dark:text-white dark:group-hover:text-amber-100 mb-2 transition-colors">
+              <h3 className="font-serif-luxury text-lg sm:text-xl font-medium text-stone-900 group-hover:text-brand-deep dark:text-white dark:group-hover:text-amber-100 mb-2 transition-colors">
                 {feat.title}
               </h3>
               <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-light leading-relaxed">

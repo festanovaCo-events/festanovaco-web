@@ -3,8 +3,34 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #FAF8F5;
-  --foreground: #18181B;
+  --background: #f7f3eb;
+  --foreground: #1c1917;
+
+  --surface: #ffffff;
+  --surface-muted: #f7f3ec;
+  --surface-sunken: #f7f3eb;
+  --surface-hover: #fcfbf9;
+
+  --line: #e9dfd0;
+  --line-strong: #d9ceba;
+  --accent: #c5a880;
+  --glow: #e8e2d5;
+  --glow-gold: #e5c583;
+
+  --brand: #064e3b;
+  --brand-deep: #022c22;
+  --brand-mid: #065f46;
+  --brand-muted: #ecfdf5;
+  --brand-muted-strong: #d1fae5;
+  --brand-line: #6ee7b7;
+  --brand-dot: #059669;
+  --on-brand: #fae2ab;
+
+  --shadow-brand-soft: rgb(6 78 59 / 0.06);
+  --shadow-brand: rgb(6 78 59 / 0.08);
+  --shadow-brand-button: rgb(6 78 59 / 0.2);
+  --shadow-brand-strong: rgb(6 78 59 / 0.25);
+  --shadow-brand-hover: rgb(6 78 59 / 0.35);
 }
 
 .dark {
@@ -15,6 +41,24 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-hover: var(--surface-hover);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-glow: var(--glow);
+  --color-glow-gold: var(--glow-gold);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-mid: var(--brand-mid);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-muted-strong: var(--brand-muted-strong);
+  --color-brand-line: var(--brand-line);
+  --color-brand-dot: var(--brand-dot);
+  --color-on-brand: var(--on-brand);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-playfair);

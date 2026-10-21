@@ -30,10 +30,10 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       onClick={toggleTheme}
       aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       title={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
-      className={`relative flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700/50 dark:focus-visible:ring-amber-300/50 ${
+      className={`relative flex items-center justify-center w-9 h-9 rounded-full border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 dark:focus-visible:ring-amber-300/50 ${
         isDark
           ? "border-amber-300/30 bg-stone-800/80 text-amber-200 hover:bg-stone-700 hover:border-amber-300/60 shadow-[0_2px_10px_rgba(216,176,102,0.15)]"
-          : "border-stone-200 bg-stone-100/80 text-stone-700 hover:bg-stone-200/80 hover:text-emerald-950 shadow-xs"
+          : "border-stone-200 bg-stone-100/80 text-stone-700 hover:bg-stone-200/80 hover:text-brand-deep shadow-xs"
       } ${className}`}
     >
       {isDark ? (

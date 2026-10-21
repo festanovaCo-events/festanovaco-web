@@ -17,27 +17,13 @@ export function ContactSection() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        className="relative overflow-hidden rounded-5xl sm:rounded-7xl border border-[#E9DFD0] dark:border-white/20 bg-linear-to-b from-white to-[#F7F3EC] dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_rgba(27,67,50,0.06)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+        className="relative overflow-hidden rounded-5xl sm:rounded-7xl border border-line dark:border-white/20 bg-surface dark:bg-linear-to-b dark:from-stone-900/90 dark:to-stone-950/95 p-8 sm:p-14 text-center backdrop-blur-2xl shadow-[0_16px_40px_var(--shadow-brand-soft)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
       >
-        {/* Ambient background glow with gentle pulse */}
-        <motion.div
-          animate={{
-            scale: [1, 1.18, 1],
-            opacity: [0.15, 0.28, 0.15],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-80 sm:size-96 rounded-full bg-[#C5A880]/20 dark:bg-amber-400/15 blur-3xl pointer-events-none"
-        />
-
         <div className="relative z-10 max-w-2xl mx-auto">
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-300/60 dark:border-amber-300/30 bg-emerald-50/90 dark:bg-amber-950/40 backdrop-blur-md mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-600 dark:bg-amber-400 animate-pulse" />
-            <span className="text-[11px] font-medium uppercase tracking-widest text-emerald-950 dark:text-amber-200">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-line/60 dark:border-amber-300/30 bg-brand-muted/90 dark:bg-amber-950/40 backdrop-blur-md mb-6">
+            <span className="w-2 h-2 rounded-full bg-brand-dot dark:bg-amber-400 animate-pulse" />
+            <span className="text-[11px] font-medium uppercase tracking-widest text-brand-deep dark:text-amber-200">
               Atención personalizada
             </span>
           </div>
@@ -58,7 +44,7 @@ export function ContactSection() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-900 hover:bg-emerald-950 dark:bg-linear-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-sm shadow-[0_8px_24px_rgba(27,67,50,0.25)] dark:shadow-[0_8px_24px_rgba(216,176,102,0.35)] hover:shadow-[0_12px_28px_rgba(27,67,50,0.35)] dark:hover:shadow-[0_12px_32px_rgba(216,176,102,0.5)] transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand hover:bg-brand-deep dark:bg-linear-to-r dark:from-amber-200 dark:via-amber-300 dark:to-amber-400 text-white dark:text-stone-950 font-medium text-sm shadow-[0_8px_24px_var(--shadow-brand-strong)] dark:shadow-[0_8px_24px_rgba(216,176,102,0.35)] hover:shadow-[0_12px_28px_var(--shadow-brand-hover)] dark:hover:shadow-[0_12px_32px_rgba(216,176,102,0.5)] transition-all duration-300"
             >
               <span>Escríbenos por WhatsApp</span>
               <span aria-hidden="true">&rarr;</span>
@@ -68,10 +54,10 @@ export function ContactSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               href={`mailto:${emailAddress}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-white/70 hover:bg-white dark:bg-white/5 dark:hover:bg-white/10 text-stone-800 dark:text-white text-sm font-medium transition-all duration-300 shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-stone-300 hover:border-stone-400 dark:border-white/20 dark:hover:border-white/40 bg-surface/70 hover:bg-surface dark:bg-white/5 dark:hover:bg-white/10 text-stone-800 dark:text-white text-sm font-medium transition-all duration-300 shadow-sm"
             >
               <svg
-                className="w-4 h-4 text-emerald-800 dark:text-amber-200"
+                className="w-4 h-4 text-brand-mid dark:text-amber-200"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -45,6 +45,7 @@ export interface WeddingTemplate {
   badge: string;
   previewImage?: string;
   theme: {
+    accent: string;
     accentGradient: string;
     glowColor: string;
     pillBg: string;

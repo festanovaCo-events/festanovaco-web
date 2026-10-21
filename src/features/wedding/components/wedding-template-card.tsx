@@ -27,13 +27,13 @@ export function WeddingTemplateCard({
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={{ y: -6, transition: { duration: 0.28, ease: "easeOut" } }}
-      className={`group relative flex flex-col justify-between w-full h-100 sm:h-105 rounded-4xl sm:rounded-5xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.4)] border border-stone-200/80 dark:border-white/10 ${template.theme.borderHover} hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_22px_55px_rgba(0,0,0,0.6)] bg-white dark:bg-[#1A1816] select-none`}
+      className={`group relative flex flex-col justify-between w-full h-100 sm:h-105 rounded-4xl sm:rounded-5xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.4)] border border-stone-200/80 dark:border-white/10 ${template.theme.borderHover} hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_22px_55px_rgba(0,0,0,0.6)] bg-surface dark:bg-[#1A1816] select-none`}
     >
-      <div className="absolute inset-x-0 top-0 h-0.5 bg-linear-to-r from-transparent via-[#C5A880]/50 dark:via-amber-300/60 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-0.5 bg-accent/50 dark:bg-transparent dark:bg-linear-to-r dark:from-transparent dark:via-amber-300/60 dark:to-transparent pointer-events-none" />
 
       <Link
         href={detailHref}
-        className="relative w-full h-56 sm:h-60 overflow-hidden bg-stone-100 dark:bg-stone-900 shrink-0 block cursor-pointer"
+        className="relative w-full h-56 sm:h-60 overflow-hidden bg-surface dark:bg-stone-900 shrink-0 block cursor-pointer"
         aria-label={`Ver detalles del modelo ${template.name}`}
       >
         {template.previewImage ? (
@@ -45,10 +45,10 @@ export function WeddingTemplateCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-108"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-black/40 pointer-events-none" />
           </div>
         ) : (
-          <div className="relative w-full h-full flex flex-col items-center justify-center p-6 bg-linear-to-br from-stone-50 via-stone-100/70 to-stone-200/60 dark:from-[#24211e] dark:via-[#1c1917] dark:to-[#141210]">
+          <div className="relative w-full h-full flex flex-col items-center justify-center p-6 bg-surface dark:bg-linear-to-br dark:from-[#24211e] dark:via-[#1c1917] dark:to-[#141210]">
             <div className="absolute inset-3 border border-stone-300/60 dark:border-white/10 rounded-2xl pointer-events-none" />
 
             <p className="font-serif-luxury text-[10px] uppercase tracking-[0.25em] text-stone-400 dark:text-stone-500">
@@ -66,7 +66,7 @@ export function WeddingTemplateCard({
 
         <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none">
           {template.isAvailable ? (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-emerald-900/90 text-white dark:bg-amber-300 dark:text-stone-950 shadow-md backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-brand/90 text-white dark:bg-amber-300 dark:text-stone-950 shadow-md backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 dark:bg-stone-900 animate-pulse" />
               {template.badge}
             </span>
@@ -81,10 +81,10 @@ export function WeddingTemplateCard({
       <div className="absolute top-56 sm:top-60 left-6 -translate-y-1/2 z-20">
         <Link
           href={detailHref}
-          className="relative size-14 sm:size-16 rounded-2xl p-1 bg-white/90 dark:bg-stone-900/90 shadow-[0_8px_20px_rgba(0,0,0,0.18)] border border-white/60 dark:border-white/20 backdrop-blur-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1 cursor-pointer block"
+          className="relative size-14 sm:size-16 rounded-2xl p-1 bg-surface/90 dark:bg-stone-900/90 shadow-[0_8px_20px_rgba(0,0,0,0.18)] border border-white/60 dark:border-white/20 backdrop-blur-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1 cursor-pointer block"
         >
-          <div className="w-full h-full rounded-xl bg-linear-to-br from-stone-900 via-[#1B4332] to-[#0A1A12] dark:from-[#2a241e] dark:via-[#1B4332] dark:to-[#0f0e0d] flex flex-col items-center justify-center text-white shadow-inner">
-            <span className="font-serif-luxury text-base sm:text-lg font-bold leading-none text-[#fae2ab] drop-shadow-xs">
+          <div className="w-full h-full rounded-xl bg-brand dark:bg-linear-to-br dark:from-[#2a241e] dark:via-[#1B4332] dark:to-[#0f0e0d] flex flex-col items-center justify-center text-white shadow-inner">
+            <span className="font-serif-luxury text-base sm:text-lg font-bold leading-none text-on-brand drop-shadow-xs">
               F
             </span>
             <span className="text-[8px] font-mono tracking-widest uppercase text-stone-300 leading-none mt-0.5">
@@ -95,9 +95,9 @@ export function WeddingTemplateCard({
       </div>
 
       <div
-        className={`relative w-full flex-1 -mt-8 bg-linear-to-br ${template.theme.accentGradient} text-white p-5 sm:p-6 flex flex-col justify-between rounded-t-5xl shadow-[0_-8px_24px_rgba(0,0,0,0.1)] transition-transform duration-300`}
+        className={`relative w-full flex-1 -mt-8 dark:bg-linear-to-br ${template.theme.accentGradient} text-white p-5 sm:p-6 flex flex-col justify-between rounded-t-5xl shadow-[0_-6px_16px_rgba(0,0,0,0.06)] transition-transform duration-300`}
         style={{
-          boxShadow: `0 -10px 30px ${template.theme.glowColor}`,
+          backgroundColor: template.theme.accent,
         }}
       >
         <div className="pl-18 sm:pl-20 pr-1 pt-1">
@@ -124,7 +124,7 @@ export function WeddingTemplateCard({
           <div className="flex items-center gap-2">
             <Link
               href={detailHref}
-              className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-white/15 hover:bg-white hover:text-stone-900 transition-all duration-300 shadow-xs active:scale-95 border border-white/30"
+              className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-surface/15 hover:bg-surface hover:text-stone-900 transition-all duration-300 shadow-xs active:scale-95 border border-white/30"
             >
               <span>Detalles</span>
               <span aria-hidden="true">&rarr;</span>
@@ -135,7 +135,7 @@ export function WeddingTemplateCard({
                 href={template.demoHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xs:inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white border border-white/70 hover:bg-white hover:text-stone-900 transition-all duration-300 shadow-sm active:scale-95"
+                className="hidden xs:inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white border border-white/70 hover:bg-surface hover:text-stone-900 transition-all duration-300 shadow-sm active:scale-95"
               >
                 <span>Demo</span>
                 <svg
