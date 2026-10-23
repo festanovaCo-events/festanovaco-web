@@ -3,6 +3,7 @@ import type { WeddingTemplate } from "../types/wedding-templates.types";
 export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
   const demoHref01 = demoHrefs[0];
   const demoHref02 = demoHrefs[1];
+  const demoHref03 = demoHrefs[2];
 
   return [
     {
@@ -108,6 +109,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         "Inspirado en la naturaleza con delicados acentos de follaje eucalipto, paleta olivo suave y ambientación rústica chic para eventos al aire libre.",
       isAvailable: Boolean(demoHref02),
       badge: demoHref02 ? "Demo en Vivo" : "Próximamente",
+      previewImage: "/images/templates/wedding-m02-preview.jpg",
       theme: {
         accent: "#607D5E",
         accentGradient: "from-[#607D5E] via-[#4A6348] to-[#2D3E2C]",
@@ -183,8 +185,9 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
       category: "modern",
       description:
         "Tipografía contemporánea de líneas limpias, composición sobria y espacios equilibrados para parejas amantes del lujo sutil.",
-      isAvailable: false,
-      badge: "Próximamente",
+      isAvailable: Boolean(demoHref03),
+      badge: demoHref03 ? "Demo en Vivo" : "Próximamente",
+      previewImage: "/images/templates/wedding-m03-preview.jpg",
       theme: {
         accent: "#6C6C70",
         accentGradient: "from-[#6C6C70] via-[#444448] to-[#1C1C1E]",
@@ -198,6 +201,7 @@ export function getWeddingTemplates(demoHrefs: string[]): WeddingTemplate[] {
         "Timeline condensado",
         "Mesa de regalos",
       ],
+      demoHref: demoHref03,
       whatsappMessage:
         "Hola FestanovaCo, me interesa el modelo 'Minimalist Couture' para mi matrimonio.",
       story:
