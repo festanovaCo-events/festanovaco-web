@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { BirthdayPage } from "@/features/birthday";
+import { BirthdayPage } from "@/features/birthday/birthday-page";
 
 export const metadata: Metadata = {
   title: "Cumpleaños",

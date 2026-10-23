@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { FifteenPage } from "@/features/fifteen";
+import { FifteenPage } from "@/features/fifteen/fifteen-page";
 
 export const metadata: Metadata = {
   title: "15 Años",

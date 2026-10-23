@@ -1,0 +1,4 @@
+export const CATALOG_PAGE_SIZE = 6;
+export const CARD_REVEAL_COLUMN_COUNT = 3;
+export const CARD_REVEAL_DELAY_SECONDS = 0.08;
+export const FEATURE_REVEAL_DELAY_SECONDS = 0.07;

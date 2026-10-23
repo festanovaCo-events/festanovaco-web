@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { WeddingTemplateDetail } from "@/features/wedding";
+import { WeddingTemplateDetail } from "@/features/wedding/components/wedding-template-detail";
 import {
   getWeddingTemplates,
   getWeddingTemplateById,
@@ -42,7 +42,7 @@ export default async function WeddingTemplateDetailPage({
   const { id } = await params;
   const demoHrefs = getWeddingDemoHrefs();
   const allTemplates = getWeddingTemplates(demoHrefs);
-  const template = getWeddingTemplateById(id, demoHrefs);
+  const template = allTemplates.find((item) => item.id === id);
 
   if (!template) {
     notFound();

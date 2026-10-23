@@ -19,6 +19,10 @@ export interface HeroCategory {
   iconNode: ReactNode;
 }
 
+export type HeroCardProps = {
+  cat: HeroCategory;
+};
+
 export interface HeroFeature {
   icon: ComponentProps<typeof HugeiconsIcon>["icon"];
   title: string;

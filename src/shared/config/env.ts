@@ -1,5 +1,12 @@
-import { invitationsWeddingUrl, weddingInvitationPath } from "./routes";
+import {
+  FIRST_WEDDING_MODEL_NUMBER,
+  invitationsWeddingUrl,
+  ROUTES,
+  weddingInvitationPath,
+} from "./routes";
 import { createInvitationRewrites, type InvitationRewrite } from "./rewrites";
+
+const DEFAULT_WEDDING_APP_ORIGIN = "http://localhost:4200";
 
 function normalizeOrigin(raw: string): string {
   const trimmed = raw.trim().replace(/\/$/, "");
@@ -16,16 +23,11 @@ function normalizeOrigin(raw: string): string {
 
 /** Orígenes del SPA de bodas (uno o varios, separados por coma en WEDDING_APP_URL). */
 export function getWeddingAppUrls(): string[] {
-  const raw = process.env.WEDDING_APP_URL ?? "http://localhost:4200";
+  const raw = process.env.WEDDING_APP_URL ?? DEFAULT_WEDDING_APP_ORIGIN;
   return raw
     .split(",")
     .map(normalizeOrigin)
     .filter((origin) => origin.length > 0);
-}
-
-/** Primer origen (modelo 01). */
-export function getWeddingAppUrl(): string {
-  return getWeddingAppUrls()[0] ?? "http://localhost:4200";
 }
 
 /**
@@ -38,13 +40,53 @@ export function getWeddingInvitationTargets(): Array<{
   origin: string;
 }> {
   return getWeddingAppUrls().map((origin, index) => {
-    const modelNumber = index + 1;
+    const modelNumber = index + FIRST_WEDDING_MODEL_NUMBER;
     return {
       modelNumber,
       path: weddingInvitationPath(modelNumber),
       origin,
     };
   });
+}
+
+/** Rewrite opcional: si el origen está vacío, la ruta se queda en Next. */
+function createInvitationRewritesFromEnv(
+  rawOrigin: string | undefined,
+  sourcePrefix: string,
+): InvitationRewrite[] {
+  const origin = normalizeOrigin(rawOrigin ?? "");
+  if (!origin) {
+    return [];
+  }
+
+  return createInvitationRewrites({
+    sourcePrefix,
+    destinationOrigin: origin,
+  });
+}
+
+const optionalInvitationOrigins: Array<{
+  rawOrigin: string | undefined;
+  sourcePrefix: string;
+}> = [
+  {
+    rawOrigin: process.env.BIRTHDAY_APP_URL,
+    sourcePrefix: ROUTES.invitationsBirthday,
+  },
+  {
+    rawOrigin: process.env.FIFTEEN_APP_URL,
+    sourcePrefix: ROUTES.invitationsFifteen,
+  },
+];
+
+/** Rewrites de Vercel/Next para bodas y para las categorías con origen configurado. */
+export function createConfiguredInvitationRewrites(): InvitationRewrite[] {
+  return [
+    ...createWeddingInvitationRewrites(),
+    ...optionalInvitationOrigins.flatMap(({ rawOrigin, sourcePrefix }) =>
+      createInvitationRewritesFromEnv(rawOrigin, sourcePrefix),
+    ),
+  ];
 }
 
 /** Rewrites de Vercel/Next para todos los modelos listados en WEDDING_APP_URL. */

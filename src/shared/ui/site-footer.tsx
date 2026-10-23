@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ROUTES } from "@/shared/config/routes";
+import { SITE_COPYRIGHT_LABEL } from "@/shared/data/brand";
+import { homeNavItems } from "@/shared/data/nav-items";
 
 export function SiteFooter() {
   return (
@@ -13,29 +15,20 @@ export function SiteFooter() {
             Festanova<span className="text-brand-mid">Co</span>
           </Link>
           <p className="text-xs text-whisper">
-            © {new Date().getFullYear()} FestanovaCo. Estudio de Invitaciones Digitales.
+            © {new Date().getFullYear()} {SITE_COPYRIGHT_LABEL}
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2.5 text-xs text-muted">
-          <Link
-            href={ROUTES.howItWorks}
-            className="hover:text-link transition-colors"
-          >
-            Cómo obtenerla
-          </Link>
-          <Link
-            href={ROUTES.faq}
-            className="hover:text-link transition-colors"
-          >
-            Preguntas frecuentes
-          </Link>
-          <Link
-            href={ROUTES.contact}
-            className="hover:text-link transition-colors"
-          >
-            Contacto
-          </Link>
+          {homeNavItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="hover:text-link transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

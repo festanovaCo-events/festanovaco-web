@@ -788,7 +788,7 @@ export function getWeddingTemplateById(
   demoHrefs: string[]
 ): WeddingTemplate | undefined {
   const templates = getWeddingTemplates(demoHrefs);
-  return templates.find((t) => t.id === id);
+  return templates.find((template) => template.id === id);
 }
 
 export function getAllWeddingTemplateIds(): string[] {

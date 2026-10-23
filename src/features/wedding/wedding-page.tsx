@@ -4,10 +4,7 @@ import { WeddingHero } from "./components/wedding-hero";
 import { WeddingFeaturesIncluded } from "./components/wedding-features-included";
 import { WeddingTemplatesGrid } from "./components/wedding-templates-grid";
 import { WeddingContactBanner } from "./components/wedding-contact-banner";
-
-type WeddingPageProps = {
-  demoToken?: string;
-};
+import type { WeddingPageProps } from "./types/wedding-page.types";
 
 export function WeddingPage({ demoToken }: WeddingPageProps) {
   const templates = getWeddingTemplates(getWeddingDemoHrefs(demoToken));

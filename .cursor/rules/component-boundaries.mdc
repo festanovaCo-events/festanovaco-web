@@ -1,0 +1,60 @@
+---
+description: Los componentes solo pintan. Interfaces, constantes, datos y utilidades viven fuera. Sin barrels ni magic strings.
+globs: src/**/*.{ts,tsx}
+alwaysApply: true
+---
+
+# Límites del componente
+
+Un archivo de componente (`components/`, `shared/ui/`) exporta el componente y nada más. Si el archivo necesita un tipo, una constante, un texto fijo o una función, ese archivo no es su sitio.
+
+## Dónde va cada cosa
+
+- Interfaces y tipos: `src/features/<feature>/types/` o, si los comparte más de un feature, `src/shared/types/`.
+- Constantes (números, claves, límites): `src/shared/config/` o `src/features/<feature>/constants/`.
+- Data quemada (copy, catálogo, mensajes, listas): `src/features/<feature>/data/`. El componente la recibe por props.
+- Utilidades (funciones puras, mapeos, formato): `src/features/<feature>/utils/` o `src/shared/utils/`.
+- Rutas, anclas, teléfono, correo y clave de tema: `src/shared/config/`. No se reescriben dentro del componente.
+
+## Magic strings
+
+Una ruta, un `id` de sección, un teléfono, un correo o una clave de almacenamiento salen de `ROUTES`, `SECTION_IDS` o el módulo de config que ya los define. Una clase de Tailwind y el texto que llega por props no son magic strings.
+
+## Sin barrels
+
+No crees `index.ts` que reexporte el feature. Importa el archivo que define el símbolo:
+
+```tsx
+import { WeddingPage } from "@/features/wedding/wedding-page";
+```
+
+```tsx
+import { WeddingPage } from "@/features/wedding";
+```
+
+## Ejemplo
+
+El componente no declara el tipo, la constante, la utilidad ni la ruta:
+
+```tsx
+const MESSAGE = "Hola";
+type CardProps = { title: string };
+function labelOf(title: string) { return title; }
+
+export function Card() {
+  return <a href="/wedding#catalogo">{labelOf(MESSAGE)}</a>;
+}
+```
+
+Eso vive al lado y el componente solo lo usa:
+
+```tsx
+import { CATALOG_MESSAGE } from "../data/catalog-copy";
+import { SECTION_IDS, ROUTES } from "@/shared/config/routes";
+import type { CardProps } from "../types/card.types";
+import { labelOf } from "../utils/label";
+
+export function Card({ title }: CardProps) {
+  return <a href={`${ROUTES.wedding}#${SECTION_IDS.weddingCatalog}`}>{labelOf(title ?? CATALOG_MESSAGE)}</a>;
+}
+```

@@ -3,21 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ROUTES } from "@/shared/config/routes";
-import type { WeddingTemplate } from "../types/wedding-templates.types";
-
-interface WeddingTemplateDetailProps {
-  template: WeddingTemplate;
-  allTemplates: WeddingTemplate[];
-}
+import { whatsappUrl } from "@/shared/config/contact";
+import { ROUTES, weddingTemplatePath } from "@/shared/config/routes";
+import { ContactPanel } from "@/shared/ui/contact-panel";
+import { modelContactPanel } from "../data/wedding-contact";
+import type { WeddingTemplateDetailProps } from "../types/wedding-page.types";
 
 export function WeddingTemplateDetail({
   template,
   allTemplates,
 }: WeddingTemplateDetailProps) {
-  const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(
-    template.whatsappMessage
-  )}`;
+  const templateWhatsappUrl = whatsappUrl(template.whatsappMessage);
 
   const currentIndex = allTemplates.findIndex((t) => t.id === template.id);
   const prevTemplate =
@@ -107,7 +103,7 @@ export function WeddingTemplateDetail({
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href={whatsappUrl}
+              href={templateWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full btn-primary font-medium text-xs sm:text-sm transition-all"
@@ -441,58 +437,15 @@ export function WeddingTemplateDetail({
         </div>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        className="panel relative overflow-hidden rounded-5xl sm:rounded-7xl border border-line p-8 sm:p-14 text-center backdrop-blur-2xl mb-16 sm:mb-20"
-      >
-        <div className="relative z-10 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-line bg-brand-muted backdrop-blur-md mb-6">
-            <span className="size-2 rounded-full bg-brand-dot animate-pulse" />
-            <span className="text-[11px] font-medium uppercase tracking-widest text-brand">
-              Atención Directa &bull; Respuesta Rápida
-            </span>
-          </div>
-
-          <h3 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-ink">
-            ¿Te gustó el modelo {template.name}?
-          </h3>
-          <p className="text-sm sm:text-base text-muted font-light leading-relaxed mt-3 mb-8">
-            Escríbenos directamente a WhatsApp o envíanos un correo para consultar fecha de entrega, cotización y opciones de personalización para tu boda.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full btn-primary btn-asesoria font-medium text-sm transition-all duration-300"
-            >
-              <span>Pedir Asesoría para este Modelo</span>
-              <span aria-hidden="true">&rarr;</span>
-            </motion.a>
-
-            <Link
-              href={ROUTES.weddingCatalog}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-line-strong hover:border-line-hover bg-ghost hover:bg-ghost-hover text-ink text-sm font-medium transition-all duration-300 shadow-xs"
-            >
-              <span>Ver Otros Modelos</span>
-            </Link>
-          </div>
-
-          <p className="text-[11px] text-subtle font-light mt-8 tracking-wide">
-            FestanovaCo &bull; Papelería Digital & Experiencias Web de Boda
-          </p>
-        </div>
-      </motion.div>
+      <ContactPanel
+        heading="h3"
+        className="mb-16 sm:mb-20"
+        {...modelContactPanel(template.name, templateWhatsappUrl)}
+      />
 
       <div className="pt-8 border-t border-line flex items-center justify-between gap-4">
         <Link
-          href={`/wedding/${prevTemplate.id}`}
+          href={weddingTemplatePath(prevTemplate.id)}
           className="group flex items-center gap-2 text-xs text-subtle hover:text-brand"
         >
           <span className="size-8 rounded-full border border-line-strong flex items-center justify-center group-hover:border-brand-mid transition-colors">
@@ -514,7 +467,7 @@ export function WeddingTemplateDetail({
         </Link>
 
         <Link
-          href={`/wedding/${nextTemplate.id}`}
+          href={weddingTemplatePath(nextTemplate.id)}
           className="group flex items-center gap-2 text-xs text-subtle hover:text-brand"
         >
           <div className="hidden sm:flex flex-col text-right">

@@ -2,10 +2,10 @@
 
 import { useTheme } from "@/shared/providers/theme-provider";
 import { useSyncExternalStore } from "react";
+import type { ThemeToggleProps } from "@/shared/types/theme-toggle.types";
+import { emptySubscribe } from "@/shared/utils/empty-subscribe";
 
-const emptySubscribe = () => () => {};
-
-export function ThemeToggle({ className = "" }: { className?: string }) {
+export function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
   const mounted = useSyncExternalStore(
     emptySubscribe,

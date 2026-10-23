@@ -1,11 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import type { ReactNode } from "react";
-
-interface CurtainTransitionProps {
-  children: ReactNode;
-}
+import type { CurtainTransitionProps } from "@/shared/types/curtain-transition.types";
 
 export function CurtainTransition({ children }: CurtainTransitionProps) {
   return (

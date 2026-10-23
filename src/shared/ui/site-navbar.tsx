@@ -4,30 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ROUTES } from "@/shared/config/routes";
+import { homeNavItems, weddingNavItems } from "@/shared/data/nav-items";
 import { ThemeToggle } from "@/shared/ui/theme-toggle";
-
-interface NavItem {
-  href: string;
-  label: string;
-}
-
-const homeNavItems: NavItem[] = [
-  { href: ROUTES.howItWorks, label: "Cómo obtenerla" },
-  { href: ROUTES.faq, label: "Preguntas frecuentes" },
-  { href: ROUTES.contact, label: "Contacto" },
-];
-
-const weddingNavItems: NavItem[] = [
-  { href: ROUTES.weddingFeatures, label: "Características" },
-  { href: ROUTES.weddingCatalog, label: "Catálogo" },
-  { href: ROUTES.weddingCustom, label: "Personalizable" },
-];
 
 export function SiteNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isWeddingPage = pathname.startsWith("/wedding");
+  const isWeddingPage = pathname.startsWith(ROUTES.wedding);
   const currentNavItems = isWeddingPage ? weddingNavItems : homeNavItems;
 
   return (

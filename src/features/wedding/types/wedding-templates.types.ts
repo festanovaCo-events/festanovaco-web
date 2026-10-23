@@ -1,5 +1,4 @@
 export type WeddingTemplateCategory =
-  | "all"
   | "classic"
   | "modern"
   | "botanical"
@@ -39,7 +38,7 @@ export interface WeddingTemplate {
   dateExample: string;
   locationExample: string;
   styleTag: string;
-  category: "classic" | "modern" | "botanical" | "destination";
+  category: WeddingTemplateCategory;
   description: string;
   isAvailable: boolean;
   badge: string;
@@ -61,3 +60,24 @@ export interface WeddingTemplate {
   includedModules: IncludedModule[];
   customizationNotes: string[];
 }
+
+export type WeddingTemplateCardProps = {
+  template: WeddingTemplateCardData;
+  index?: number;
+};
+
+export type WeddingTemplateCardData = Pick<
+  WeddingTemplate,
+  | "id"
+  | "number"
+  | "name"
+  | "couplesNames"
+  | "styleTag"
+  | "description"
+  | "isAvailable"
+  | "badge"
+  | "previewImage"
+  | "demoHref"
+  | "dateExample"
+  | "theme"
+>;

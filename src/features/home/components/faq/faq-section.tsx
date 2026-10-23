@@ -2,58 +2,22 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-
-interface FaqItem {
-  question: string;
-  answer: string;
-}
-
-const faqs: FaqItem[] = [
-  {
-    question: "¿Cómo confirman asistencia mis invitados (RSVP)?",
-    answer:
-      "Tu invitación incluye un módulo de confirmación interactivo. Tus invitados ingresan su nombre, confirman si asistirán y pueden dejar observaciones (como restricciones alimentarias o acompañantes). Las respuestas te llegan organizadas en tiempo real.",
-  },
-  {
-    question: "¿Pueden abrir la ubicación directamente en Google Maps y Waze?",
-    answer:
-      "Sí, integramos botones directos con GPS para Google Maps y Waze. Con un solo toque desde su celular, los invitados inician la ruta hacia la iglesia, hacienda o salón de eventos.",
-  },
-  {
-    question: "¿Se puede incluir música de fondo y galería de fotos?",
-    answer:
-      "Totalmente. Puedes elegir tu canción favorita para que suene con un reproductor elegante y discreto al abrir la invitación, además de una galería con fotos de pareja o homenajeado.",
-  },
-  {
-    question: "¿Cuánto tiempo tarda la entrega de la invitación digital?",
-    answer:
-      "Una vez recibida tu información y fotos, te enviamos el primer borrador interactivo en 24 a 48 horas hábiles para tu revisión y aprobación.",
-  },
-  {
-    question: "¿Qué pasa si necesito hacer un cambio de horario o lugar?",
-    answer:
-      "Al ser un enlace digital web, actualizamos la información en vivo sin que tengas que reenviar otro archivo o enlace a tus invitados. Todo se actualiza automáticamente.",
-  },
-  {
-    question: "¿Es compatible con cualquier celular (iPhone, Android) y computador?",
-    answer:
-      "Sí, nuestras invitaciones están diseñadas y optimizadas para verse con máxima nitidez y velocidad en cualquier smartphone, tablet o computadora sin necesidad de instalar ninguna app.",
-  },
-];
+import { FAQ_REVEAL_DELAY_SECONDS } from "@/features/home/constants/reveal";
+import { faqIntro, faqs } from "@/features/home/data/faq-data";
+import { SECTION_IDS } from "@/shared/config/routes";
 
 export function FaqSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const toggle = (idx: number) => {
-    setOpenIdx(openIdx === idx ? null : idx);
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <section
-      id="preguntas-frecuentes"
+      id={SECTION_IDS.faq}
       className="relative z-10 w-full py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto text-foreground scroll-mt-20"
     >
-      {/* Section Header with Scroll Reveal */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,29 +26,28 @@ export function FaqSection() {
         className="text-center max-w-2xl mx-auto mb-12 sm:mb-16"
       >
         <span className="text-[11px] font-serif-luxury uppercase tracking-[0.2em] text-brand border border-badge-line px-3.5 py-1 rounded-full bg-badge shadow-[var(--shadow-badge)]">
-          Dudas Comunes
+          {faqIntro.badge}
         </span>
         <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-ink mt-4">
-          Preguntas Frecuentes
+          {faqIntro.title}
         </h2>
         <p className="text-sm sm:text-base text-muted font-light mt-3">
-          Todo lo que necesitas saber sobre nuestras invitaciones digitales interactivas.
+          {faqIntro.description}
         </p>
       </motion.div>
 
-      {/* Accordion List with Staggered Scroll Reveal */}
       <div className="space-y-3.5 sm:space-y-4">
-        {faqs.map((faq, idx) => {
-          const isOpen = openIdx === idx;
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
           return (
             <motion.div
-              key={idx}
+              key={faq.question}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{
                 duration: 0.45,
-                delay: idx * 0.05,
+                delay: index * FAQ_REVEAL_DELAY_SECONDS,
                 ease: [0.22, 1, 0.36, 1],
               }}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${
@@ -95,7 +58,7 @@ export function FaqSection() {
             >
               <button
                 type="button"
-                onClick={() => toggle(idx)}
+                onClick={() => toggle(index)}
                 className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 cursor-pointer"
               >
                 <span className="text-sm sm:text-base font-medium text-ink pr-4 font-serif-luxury">

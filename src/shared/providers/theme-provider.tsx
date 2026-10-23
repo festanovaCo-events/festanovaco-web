@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { THEME_STORAGE_KEY } from "@/shared/config/theme";
 
 type Theme = "light" | "dark";
 
@@ -18,12 +19,10 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
-const STORAGE_KEY = "festanova_theme";
-
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light";
   try {
-    const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
     if (stored === "dark" || stored === "light") {
       return stored;
     }
@@ -50,9 +49,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const setTheme = (nextTheme: Theme) => {
     setThemeState(nextTheme);
     try {
-      localStorage.setItem(STORAGE_KEY, nextTheme);
+      localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
     } catch {
-      // ignore
+      // Private mode can reject localStorage; the class on <html> still applies.
     }
   };
 

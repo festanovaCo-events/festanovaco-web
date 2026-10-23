@@ -1,69 +1,21 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import type { WeddingTemplate } from "../types/wedding-templates.types";
-
-const washHotStyle = {
-  backgroundColor: "#f7f3eb",
-  color: "#161311",
-  borderColor: "#f7f3eb",
-};
-
-function WashButton({
-  href,
-  external = false,
-  children,
-}: {
-  href: string;
-  external?: boolean;
-  children: ReactNode;
-}) {
-  const [hot, setHot] = useState(false);
-  const className =
-    "btn-on-wash inline-flex items-center justify-center gap-1 px-3.5 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider border cursor-pointer transition-colors duration-200 active:scale-95";
-
-  if (external) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-        style={hot ? washHotStyle : undefined}
-        onMouseEnter={() => setHot(true)}
-        onMouseLeave={() => setHot(false)}
-      >
-        {children}
-      </a>
-    );
-  }
-
-  return (
-    <Link
-      href={href}
-      className={className}
-      style={hot ? washHotStyle : undefined}
-      onMouseEnter={() => setHot(true)}
-      onMouseLeave={() => setHot(false)}
-    >
-      {children}
-    </Link>
-  );
-}
-
-interface WeddingTemplateCardProps {
-  template: WeddingTemplate;
-  index?: number;
-}
+import { weddingTemplatePath } from "@/shared/config/routes";
+import {
+  CARD_REVEAL_COLUMN_COUNT,
+  CARD_REVEAL_DELAY_SECONDS,
+} from "../constants/catalog";
+import { WashButton } from "./wash-button";
+import type { WeddingTemplateCardProps } from "../types/wedding-templates.types";
 
 export function WeddingTemplateCard({
   template,
   index = 0,
 }: WeddingTemplateCardProps) {
-  const detailHref = `/wedding/${template.id}`;
+  const detailHref = weddingTemplatePath(template.id);
 
   return (
     <motion.article
@@ -72,7 +24,7 @@ export function WeddingTemplateCard({
       viewport={{ once: true, margin: "-40px" }}
       transition={{
         duration: 0.45,
-        delay: (index % 3) * 0.08,
+        delay: (index % CARD_REVEAL_COLUMN_COUNT) * CARD_REVEAL_DELAY_SECONDS,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={`group relative flex flex-col justify-between w-full h-100 sm:h-105 rounded-4xl sm:rounded-5xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-media)] border border-line ${template.theme.borderHover} bg-canvas select-none`}

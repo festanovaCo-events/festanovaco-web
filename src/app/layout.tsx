@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { THEME_STORAGE_KEY } from "@/shared/config/theme";
 import { ThemeProvider } from "@/shared/providers/theme-provider";
 
 import "./globals.css";
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 const themeScript = `
 (function() {
   try {
-    var stored = localStorage.getItem('festanova_theme');
+    var stored = localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});
     var isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (isDark) {
       document.documentElement.classList.add('dark');

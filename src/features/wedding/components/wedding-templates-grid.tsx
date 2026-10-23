@@ -2,28 +2,24 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { SECTION_IDS } from "@/shared/config/routes";
+import { CATALOG_PAGE_SIZE } from "../constants/catalog";
 import { WeddingTemplateCard } from "./wedding-template-card";
-import type { WeddingTemplate } from "../types/wedding-templates.types";
-
-interface WeddingTemplatesGridProps {
-  templates: WeddingTemplate[];
-}
-
-const ITEMS_PER_PAGE = 6;
+import type { WeddingTemplatesGridProps } from "../types/wedding-page.types";
 
 export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const totalPages = Math.ceil(templates.length / ITEMS_PER_PAGE) || 1;
+  const totalPages = Math.ceil(templates.length / CATALOG_PAGE_SIZE) || 1;
   const safeCurrentPage = Math.min(currentPage, totalPages);
 
-  const startIndex = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, templates.length);
+  const startIndex = (safeCurrentPage - 1) * CATALOG_PAGE_SIZE;
+  const endIndex = Math.min(startIndex + CATALOG_PAGE_SIZE, templates.length);
   const currentTemplates = templates.slice(startIndex, endIndex);
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
-    const sectionElement = document.getElementById("catalogo");
+    const sectionElement = document.getElementById(SECTION_IDS.weddingCatalog);
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -31,7 +27,7 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
 
   return (
     <section
-      id="catalogo"
+      id={SECTION_IDS.weddingCatalog}
       className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 border-t border-line scroll-mt-20"
     >
       <motion.div
@@ -61,11 +57,11 @@ export function WeddingTemplatesGrid({ templates }: WeddingTemplatesGridProps) {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          {currentTemplates.map((template, idx) => (
+          {currentTemplates.map((template, index) => (
             <WeddingTemplateCard
               key={template.id}
               template={template}
-              index={idx}
+              index={index}
             />
           ))}
         </motion.div>

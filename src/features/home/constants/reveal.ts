@@ -1,0 +1,2 @@
+export const FAQ_REVEAL_DELAY_SECONDS = 0.05;
+export const STEP_REVEAL_DELAY_SECONDS = 0.08;

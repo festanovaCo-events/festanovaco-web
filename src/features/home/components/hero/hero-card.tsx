@@ -1,9 +1,5 @@
 import Link from "next/link";
-import type { HeroCategory } from "@/features/home/types/hero.types";
-
-interface HeroCardProps {
-  cat: HeroCategory;
-}
+import type { HeroCardProps } from "@/features/home/types/hero.types";
 
 export function HeroCard({ cat }: HeroCardProps) {
   const CardContent = (
