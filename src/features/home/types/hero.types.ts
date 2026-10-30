@@ -1,5 +1,4 @@
-import type { ComponentProps, ReactNode } from "react";
-import type { HugeiconsIcon } from "@hugeicons/react";
+import type { ReactNode } from "react";
 
 export interface HeroCategoryTheme {
   accentColor: string;
@@ -22,9 +21,3 @@ export interface HeroCategory {
 export type HeroCardProps = {
   cat: HeroCategory;
 };
-
-export interface HeroFeature {
-  icon: ComponentProps<typeof HugeiconsIcon>["icon"];
-  title: string;
-  subtitle: string;
-}

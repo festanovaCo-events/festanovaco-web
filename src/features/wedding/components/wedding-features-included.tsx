@@ -32,9 +32,9 @@ export function WeddingFeaturesIncluded() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-y-12">
         {weddingFeatures.map((feature, index) => (
-          <motion.div
+          <motion.li
             key={feature.title}
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,29 +44,26 @@ export function WeddingFeaturesIncluded() {
               delay: index * FEATURE_REVEAL_DELAY_SECONDS,
               ease: [0.22, 1, 0.36, 1],
             }}
-            whileHover={{ y: -4, transition: { duration: 0.25 } }}
-            className="group p-6 sm:p-7 rounded-3xl border border-line hover:border-accent bg-surface hover:bg-surface-hover backdrop-blur-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] flex flex-col justify-between transition-all duration-300"
+            className="flex flex-col"
           >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <div className="size-11 rounded-2xl flex items-center justify-center bg-surface-muted text-brand border border-line-strong group-hover:border-brand/40 group-hover:bg-glow transition-all duration-300">
-                  {feature.icon}
-                </div>
-                <span className="text-[10px] font-medium uppercase tracking-wider text-muted bg-inset border border-line-soft px-2.5 py-0.5 rounded-full">
-                  {feature.badge}
-                </span>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="size-10 flex items-center justify-center text-brand">
+                {feature.icon}
               </div>
-
-              <h3 className="font-serif-luxury text-lg sm:text-xl font-medium text-ink group-hover:text-brand-deep mb-2 transition-colors">
-                {feature.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-muted font-light leading-relaxed">
-                {feature.description}
-              </p>
+              <span className="text-[10px] font-medium uppercase tracking-wider text-muted">
+                {feature.badge}
+              </span>
             </div>
-          </motion.div>
+
+            <h3 className="font-serif-luxury text-lg sm:text-xl font-medium text-ink mb-2">
+              {feature.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-muted font-light leading-relaxed">
+              {feature.description}
+            </p>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

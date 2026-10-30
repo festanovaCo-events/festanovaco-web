@@ -5,13 +5,18 @@ import BalloonsIcon from "@hugeicons/core-free-icons/BalloonsIcon";
 import Suit01Icon from "@hugeicons/core-free-icons/Suit01Icon";
 import GraduationCapIcon from "@hugeicons/core-free-icons/GraduationCapIcon";
 import BabyBottleIcon from "@hugeicons/core-free-icons/BabyBottleIcon";
-import SmartPhone01Icon from "@hugeicons/core-free-icons/SmartPhone01Icon";
-import PaintBoardIcon from "@hugeicons/core-free-icons/PaintBoardIcon";
-import MailValidation01Icon from "@hugeicons/core-free-icons/MailValidation01Icon";
-import ShieldCheckIcon from "@hugeicons/core-free-icons/ShieldCheckIcon";
 
 import { ROUTES } from "@/shared/config/routes";
-import type { HeroCategory, HeroFeature } from "@/features/home/types/hero.types";
+import type { HeroCategory } from "@/features/home/types/hero.types";
+
+const brandTheme = {
+  accentColor: "#c5a880",
+  glowBg: "rgba(197, 168, 128, 0.18)",
+  borderHover: "hover:border-accent",
+} as const;
+
+const brandIconClassName =
+  "w-10 h-10 sm:w-11 sm:h-11 text-brand transition-transform duration-300 group-hover:scale-105";
 
 export const allCategories: HeroCategory[] = [
   {
@@ -21,9 +26,7 @@ export const allCategories: HeroCategory[] = [
     href: ROUTES.wedding,
     isAvailable: true,
     theme: {
-      accentColor: "#e5c583",
-      glowBg: "rgba(229, 197, 131, 0.15)",
-      borderHover: "hover:border-accent",
+      ...brandTheme,
       tagline: "El gran día",
     },
     iconNode: (
@@ -31,7 +34,7 @@ export const allCategories: HeroCategory[] = [
         icon={WeddingIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-brand transition-transform duration-300 group-hover:scale-105"
+        className={brandIconClassName}
       />
     ),
   },
@@ -43,9 +46,7 @@ export const allCategories: HeroCategory[] = [
     isAvailable: false,
     href: ROUTES.fifteen,
     theme: {
-      accentColor: "#f4a8bd",
-      glowBg: "rgba(244, 168, 189, 0.15)",
-      borderHover: "hover:border-blush-line",
+      ...brandTheme,
       tagline: "Mis Quince",
     },
     iconNode: (
@@ -54,9 +55,9 @@ export const allCategories: HeroCategory[] = [
           icon={CrownIcon}
           size={32}
           strokeWidth={1.75}
-          className="w-8 h-8 sm:w-9 sm:h-9 text-blush transition-transform duration-300 group-hover:scale-105"
+          className="w-8 h-8 sm:w-9 sm:h-9 text-brand transition-transform duration-300 group-hover:scale-105"
         />
-        <span className="font-serif-luxury text-lg sm:text-xl font-semibold text-blush-deep leading-none mt-1">
+        <span className="font-serif-luxury text-lg sm:text-xl font-semibold text-brand-deep leading-none mt-1">
           15
         </span>
       </div>
@@ -70,9 +71,7 @@ export const allCategories: HeroCategory[] = [
     href: ROUTES.birthday,
     isAvailable: false,
     theme: {
-      accentColor: "#f39c6b",
-      glowBg: "rgba(243, 156, 107, 0.15)",
-      borderHover: "hover:border-honey-line",
+      ...brandTheme,
       tagline: "Celebración",
     },
     iconNode: (
@@ -80,7 +79,7 @@ export const allCategories: HeroCategory[] = [
         icon={BalloonsIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-honey transition-transform duration-300 group-hover:scale-105"
+        className={brandIconClassName}
       />
     ),
   },
@@ -88,13 +87,11 @@ export const allCategories: HeroCategory[] = [
     id: "empresarial",
     title: "Empresarial",
     subtitle: "Galas & eventos",
-    href: "#",
+    href: ROUTES.home,
     badge: "Próximamente",
     isAvailable: false,
     theme: {
-      accentColor: "#a5b4fc",
-      glowBg: "rgba(165, 180, 252, 0.12)",
-      borderHover: "hover:border-iris-line",
+      ...brandTheme,
       tagline: "Corporativo",
     },
     iconNode: (
@@ -102,7 +99,7 @@ export const allCategories: HeroCategory[] = [
         icon={Suit01Icon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-iris transition-transform duration-300 group-hover:scale-105"
+        className={brandIconClassName}
       />
     ),
   },
@@ -110,13 +107,11 @@ export const allCategories: HeroCategory[] = [
     id: "graduacion",
     title: "Graduación",
     subtitle: "Logros & etapas",
-    href: "#",
+    href: ROUTES.home,
     badge: "Próximamente",
     isAvailable: false,
     theme: {
-      accentColor: "#6ee7b7",
-      glowBg: "rgba(110, 231, 183, 0.12)",
-      borderHover: "hover:border-mint-line",
+      ...brandTheme,
       tagline: "Grados",
     },
     iconNode: (
@@ -124,7 +119,7 @@ export const allCategories: HeroCategory[] = [
         icon={GraduationCapIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-mint transition-transform duration-300 group-hover:scale-105"
+        className={brandIconClassName}
       />
     ),
   },
@@ -132,13 +127,11 @@ export const allCategories: HeroCategory[] = [
     id: "baby-shower",
     title: "Baby Shower",
     subtitle: "Bienvenida especial",
-    href: "#",
+    href: ROUTES.home,
     badge: "Próximamente",
     isAvailable: false,
     theme: {
-      accentColor: "#c4b5fd",
-      glowBg: "rgba(196, 181, 253, 0.12)",
-      borderHover: "hover:border-lilac-line",
+      ...brandTheme,
       tagline: "Bebés",
     },
     iconNode: (
@@ -146,31 +139,8 @@ export const allCategories: HeroCategory[] = [
         icon={BabyBottleIcon}
         size={44}
         strokeWidth={1.75}
-        className="w-10 h-10 sm:w-11 sm:h-11 text-lilac transition-transform duration-300 group-hover:scale-105"
+        className={brandIconClassName}
       />
     ),
-  },
-];
-
-export const footerFeatures: HeroFeature[] = [
-  {
-    icon: SmartPhone01Icon,
-    title: "100% Digital",
-    subtitle: "Acceso instantáneo y enlace web",
-  },
-  {
-    icon: PaintBoardIcon,
-    title: "Diseño Editorial",
-    subtitle: "Personalización y estilo exclusivo",
-  },
-  {
-    icon: MailValidation01Icon,
-    title: "Confirmación RSVP",
-    subtitle: "Gestión de invitados en vivo",
-  },
-  {
-    icon: ShieldCheckIcon,
-    title: "Música & Ubicación",
-    subtitle: "Mapas, agenda y detalles clave",
   },
 ];

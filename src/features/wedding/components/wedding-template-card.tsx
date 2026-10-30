@@ -63,19 +63,6 @@ export function WeddingTemplateCard({
             </p>
           </div>
         )}
-
-        <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none">
-          {template.isAvailable ? (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-brand text-on-cta shadow-md backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-live animate-pulse" />
-              {template.badge}
-            </span>
-          ) : (
-            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider bg-black/40 text-stone-200 border border-white/15 backdrop-blur-md shadow-xs">
-              {template.badge}
-            </span>
-          )}
-        </div>
       </Link>
 
       <div className="absolute top-56 sm:top-60 left-6 -translate-y-1/2 z-20">
@@ -101,11 +88,25 @@ export function WeddingTemplateCard({
         }}
       >
         <div className="pl-18 sm:pl-20 pr-1 pt-1">
-          <Link href={detailHref} className="hover:underline">
-            <h4 className="font-serif-luxury text-base sm:text-lg font-medium tracking-wide leading-tight text-white drop-shadow-xs line-clamp-1">
-              {template.name}
-            </h4>
-          </Link>
+          <div className="flex items-start justify-between gap-2">
+            <Link href={detailHref} className="hover:underline min-w-0">
+              <h4 className="font-serif-luxury text-base sm:text-lg font-medium tracking-wide leading-tight text-white drop-shadow-xs line-clamp-1">
+                {template.name}
+              </h4>
+            </Link>
+            <span
+              className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wider ${
+                template.isAvailable
+                  ? "bg-white/20 text-white"
+                  : "bg-black/25 text-white/80"
+              }`}
+            >
+              {template.isAvailable ? (
+                <span className="w-1.5 h-1.5 rounded-full bg-live animate-pulse" />
+              ) : null}
+              {template.badge}
+            </span>
+          </div>
           <p className="text-[11px] sm:text-xs text-white/85 font-light leading-snug mt-1 line-clamp-2">
             {template.description}
           </p>

@@ -8,9 +8,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-Lee y aplica estas dos guías sobre el código actual de `src/`:
+Lee y aplica estas guías sobre el código actual de `src/`:
 
 - `.cursor/rules/component-boundaries.mdc`
 - `.cursor/skills/clean-code/SKILL.md`
+- `docs/DESIGN.md` — identidad visual (tokens + reglas de UI para agentes; formato [Stitch DESIGN.md](https://stitch.withgoogle.com/docs/learn/overview/))
 
 Deja cada archivo como esas guías lo piden. El cambio se queda en lo que no cumple. No reescribas la arquitectura ni crees `index.ts` de reexportación.

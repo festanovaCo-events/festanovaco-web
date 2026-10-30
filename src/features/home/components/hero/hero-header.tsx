@@ -16,7 +16,8 @@ export function HeroHeader() {
       </h1>
 
       <p className="mt-3.5 sm:mt-4 text-sm sm:text-base md:text-lg text-muted font-light tracking-wide max-w-xl mx-auto leading-relaxed">
-        Elige tu categoría perfecta y comparte una experiencia interactiva, elegante e inolvidable con tus invitados.
+        Elige tu categoría y comparte una invitación digital elegante con tus
+        invitados.
       </p>
 
       <div className="mt-6 sm:mt-8 flex items-center justify-center gap-3 opacity-70">
