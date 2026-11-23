@@ -73,11 +73,8 @@ export type WeddingTemplateCardData = Pick<
   | "name"
   | "couplesNames"
   | "styleTag"
-  | "description"
   | "isAvailable"
   | "badge"
   | "previewImage"
   | "demoHref"
-  | "dateExample"
-  | "theme"
 >;
