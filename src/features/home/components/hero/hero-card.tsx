@@ -9,8 +9,7 @@ export function HeroCard({ cat }: HeroCardProps) {
       <div className="hairline absolute inset-x-0 top-0 h-0.5 pointer-events-none" />
 
       <div
-        className="card-glow absolute -top-10 left-1/2 -translate-x-1/2 size-36 rounded-full blur-2xl transition-opacity duration-500 pointer-events-none"
-        style={{ backgroundColor: cat.theme.glowBg }}
+        className={`card-glow absolute -top-10 left-1/2 -translate-x-1/2 size-36 rounded-full blur-2xl transition-opacity duration-500 pointer-events-none ${cat.theme.glowClassName}`}
       />
 
       <div className="relative z-10 w-full flex justify-center pt-1">

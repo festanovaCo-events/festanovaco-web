@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 
 export interface HeroCategoryTheme {
-  accentColor: string;
-  glowBg: string;
+  glowClassName: string;
   borderHover: string;
   tagline: string;
 }

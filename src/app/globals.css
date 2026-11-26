@@ -344,14 +344,14 @@ body {
 }
 
 .dark .btn-asesoria {
-  background: linear-gradient(90deg, #faeecd, #e7c98a, #d7b56a);
-  color: #161311;
-  box-shadow: 0 8px 24px rgb(231 201 138 / 0.28);
+  background: var(--cta);
+  color: var(--on-cta);
+  box-shadow: var(--shadow-cta);
 }
 
 .dark .btn-asesoria:hover {
-  background: linear-gradient(90deg, #fff6df, #f3e0b5);
-  box-shadow: 0 12px 32px rgb(231 201 138 / 0.4);
+  background: var(--cta-hover);
+  box-shadow: var(--shadow-cta-hover);
 }
 
 .btn-on-wash {
@@ -361,9 +361,9 @@ body {
 }
 
 .btn-on-wash:hover {
-  background-color: #f7f3eb;
-  color: #161311;
-  border-color: #f7f3eb;
+  background-color: var(--wash-fill);
+  color: var(--on-wash);
+  border-color: var(--wash-fill);
 }
 
 .panel {

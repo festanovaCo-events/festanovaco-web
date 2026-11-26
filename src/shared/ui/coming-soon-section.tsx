@@ -45,7 +45,7 @@ export function ComingSoonSection({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-white font-medium text-xs sm:text-sm shadow-md transition-all transform hover:-translate-y-0.5 active:scale-95 ${toneClasses.cta}`}
+          className="btn-primary inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-medium text-xs sm:text-sm transition-all transform hover:-translate-y-0.5 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
         >
           <span>{whatsappLabel}</span>
           <span aria-hidden="true">&rarr;</span>

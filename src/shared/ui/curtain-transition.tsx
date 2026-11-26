@@ -33,7 +33,7 @@ export function CurtainTransition({ children }: CurtainTransitionProps) {
           <div className="h-0.5 w-12 bg-gold" />
         </motion.div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-gold shadow-[0_0_15px_rgba(250,226,171,0.6)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-gold shadow-[0_0_15px_color-mix(in_srgb,var(--gold)_60%,transparent)]" />
       </motion.div>
 
       <motion.div

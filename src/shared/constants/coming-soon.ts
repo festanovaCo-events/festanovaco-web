@@ -9,14 +9,12 @@ export const comingSoonToneClassName: Record<
 > = {
   honey: {
     pill: "border-honey-line",
-    dot: "bg-amber-500",
+    dot: "bg-honey",
     accent: "text-honey",
-    cta: "bg-amber-800 hover:bg-amber-900",
   },
   blush: {
     pill: "border-blush-line",
-    dot: "bg-rose-500",
+    dot: "bg-blush",
     accent: "text-blush",
-    cta: "bg-rose-800 hover:bg-rose-900",
   },
 };

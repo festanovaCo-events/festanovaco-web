@@ -4,8 +4,10 @@ Sitio principal de [festanovaco.com](https://festanovaco.com). Las invitaciones 
 
 - Modelo 01 → `/invitations-wedding-model-01`
 - Modelo 02 → `/invitations-wedding-model-02`
+- Modelo 03 → `/invitations-wedding-model-03`
+- Modelo 04 → `/invitations-wedding-model-04`
 
-Los subdominios `wedding-invitations-m01/m02.festanovaco.com` son el origen de cada SPA Angular (destino de los rewrites). La URL pública sigue siendo `festanovaco.com/invitations-wedding-model-0X`. En Vercel, `WEDDING_APP_URL` debe apuntar a esos subdominios (con `https://`). Los proyectos Angular no deben redirigir esos hosts de vuelta a `festanovaco.com`, o se crea un bucle.
+Los subdominios `wedding-invitations-m01/m02/m03/m04.festanovaco.com` son el origen de cada SPA Angular (destino de los rewrites). La URL pública sigue siendo `festanovaco.com/invitations-wedding-model-0X`. En Vercel, `WEDDING_APP_URL` debe apuntar a esos subdominios (con `https://`). Los proyectos Angular no deben redirigir esos hosts de vuelta a `festanovaco.com`, o se crea un bucle.
 
 Documentación de objetivo, razones, arquitectura y alcance: [docs/arquitectura.md](./docs/arquitectura.md).
 

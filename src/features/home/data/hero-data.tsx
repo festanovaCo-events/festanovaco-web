@@ -10,8 +10,7 @@ import { ROUTES } from "@/shared/config/routes";
 import type { HeroCategory } from "@/features/home/types/hero.types";
 
 const brandTheme = {
-  accentColor: "#c5a880",
-  glowBg: "rgba(197, 168, 128, 0.18)",
+  glowClassName: "bg-accent/20",
   borderHover: "hover:border-accent",
 } as const;
 

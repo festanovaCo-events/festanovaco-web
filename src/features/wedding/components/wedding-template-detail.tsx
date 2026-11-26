@@ -213,7 +213,7 @@ export function WeddingTemplateDetail({
                       <span className="text-xs font-medium text-ink-soft leading-none">
                         {color.name}
                       </span>
-                      <span className="text-[10px] text-stone-400 font-light mt-0.5">
+                      <span className="text-[10px] text-faint font-light mt-0.5">
                         {color.role}
                       </span>
                     </div>
@@ -452,7 +452,7 @@ export function WeddingTemplateDetail({
             &larr;
           </span>
           <div className="hidden sm:flex flex-col text-left">
-            <span className="text-[10px] text-stone-400">Anterior</span>
+            <span className="text-[10px] text-faint">Anterior</span>
             <span className="font-serif-luxury font-medium text-ink">
               {prevTemplate.name}
             </span>
@@ -471,7 +471,7 @@ export function WeddingTemplateDetail({
           className="group flex items-center gap-2 text-xs text-subtle hover:text-brand"
         >
           <div className="hidden sm:flex flex-col text-right">
-            <span className="text-[10px] text-stone-400">Siguiente</span>
+            <span className="text-[10px] text-faint">Siguiente</span>
             <span className="font-serif-luxury font-medium text-ink">
               {nextTemplate.name}
             </span>

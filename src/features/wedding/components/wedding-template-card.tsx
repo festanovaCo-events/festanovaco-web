@@ -68,17 +68,6 @@ export function WeddingTemplateCard({
                 </p>
               </div>
             )}
-
-            <div className="absolute top-3 left-3 z-20">
-              <div className="size-10 rounded-xl bg-brand text-on-brand border border-brand-line flex flex-col items-center justify-center shadow-[var(--shadow-soft)]">
-                <span className="font-serif-luxury text-sm font-bold leading-none">
-                  F
-                </span>
-                <span className="text-[7px] font-mono tracking-widest uppercase text-on-brand/75 leading-none mt-0.5">
-                  {template.number}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </Link>
@@ -95,6 +84,9 @@ export function WeddingTemplateCard({
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-dot animate-pulse" />
               ) : null}
               {template.badge}
+            </span>
+            <span className="font-mono text-[10px] font-medium tracking-wider text-faint">
+              F{template.number}
             </span>
           </div>
           <h4 className="font-serif-luxury text-base sm:text-lg font-medium tracking-wide leading-tight text-ink line-clamp-1">

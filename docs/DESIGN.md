@@ -163,7 +163,6 @@ components:
     rounded: "{rounded.md}"
     padding: 12px
 ---
-
 # FestanovaCo Design System
 
 Fuente de verdad visual para agentes (Stitch / coding agents). Los tokens YAML son normativos; la prosa explica el porqué. Los valores viven también en `src/app/globals.css` — si hay conflicto, alinear este archivo con el CSS.
@@ -205,7 +204,7 @@ Contraste: texto normal ≥ WCAG AA (4.5:1). CTA light: blanco sobre brand. CTA 
 
 Dos voces: serif de lujo para marca y títulos; sans ligera para cuerpo y UI.
 
-- **Playfair Display (`font-serif-luxury`):** Brand wordmark, H1–H3 de sección, nombres de plantilla, badges editoriales en mayúsculas con tracking amplio.
+- **Playfair Display (**`font-serif-luxury`**):** Brand wordmark, H1–H3 de sección, nombres de plantilla, badges editoriales en mayúsculas con tracking amplio.
 - **Geist:** Cuerpo, nav, botones, metadatos. Preferir `font-light` / `font-medium`; evitar paredes de `font-bold` en sans.
 - **Geist Mono:** Metadatos técnicos (códigos de plantilla, badges de colección).
 
@@ -215,7 +214,7 @@ El wordmark es `Festanova` + `Co` en peso semibold y color `primary-mid` (light)
 
 ## Layout
 
-Grid fluido en móvil; contenedor fijo en desktop con `max-w-6xl` (~1152px) para shell (nav, footer, grids de catálogo). Paneles de contacto / coming-soon pueden usar `max-w-2xl`–`max-w-4xl` centrados.
+Grid fluido en móvil; contenedor fijo en desktop con `max-w-6xl` (\~1152px) para shell (nav, footer, grids de catálogo). Paneles de contacto / coming-soon pueden usar `max-w-2xl`–`max-w-4xl` centrados.
 
 Escala base 4/8px. Gutters `px-4 sm:px-6`. Secciones verticales generosas (`py-20` / `py-28` en momentos heroicos; menos en listados densos).
 
@@ -242,12 +241,12 @@ Lenguaje redondeado y amable, no geométrico-agresivo.
 
 ## Components
 
-- **Buttons primary (`.btn-primary` / `.btn-asesoria`):** Fill brand (light) o gradiente oro (dark); texto `on-cta`; uppercase tracking-wider; `rounded-full`; hover scale sutil (~1.02) y active ~0.98.
+- **Buttons primary (**`.btn-primary` **/** `.btn-asesoria`**):** Fill brand (light) o gradiente oro (dark); texto `on-cta`; uppercase tracking-wider; `rounded-full`; hover scale sutil (\~1.02) y active \~0.98.
 - **Buttons secondary:** Chip/surface, borde `line-strong`, texto ink; mismo radio full en CTAs de página.
-- **Buttons on-wash (`.btn-on-wash`):** Sobre foto/wash oscuro — borde blanco translúcido; hover a papel + tinta.
+- **Buttons on-wash (**`.btn-on-wash`**):** Sobre foto/wash oscuro — borde blanco translúcido; hover a papel + tinta.
 - **Navbar:** Wordmark serif + links muted medium + un solo CTA asesoria; menú móvil sheet con items `rounded-xl`.
 - **Badges / chips:** Pill con borde `badge-line` o `brand-line`; label 11px uppercase tracking amplio.
-- **Panels (`.panel`):** Surface elevada; en dark, gradiente sutil hacia surface.
+- **Panels (**`.panel`**):** Surface elevada; en dark, gradiente sutil hacia surface.
 - **Cards de catálogo:** Interacción (hover glow, link); no usar cards decorativas en el hero.
 - **Theme toggle:** Círculo 36px, borde `toggle-border`, sombra suave.
 - **Curtain transition:** Fill `primary-deep` / brand; wordmark blanco + Co gold.

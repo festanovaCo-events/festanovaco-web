@@ -15,5 +15,4 @@ export type ComingSoonToneClasses = {
   pill: string;
   dot: string;
   accent: string;
-  cta: string;
 };
